@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "webpack -w & nodemon server",
-    "serve": "webpack serve",
-    "build": "webpack"
+    "start-dev": "npm run start-server & npm run build:dev",
+    "start-server": "nodemon ./server.js --ignore public/ --ignore client/",
+    "build:dev": "npm run build -- --watch --mode=development",
+    "build": "webpack",
+    "serve": "webpack serve"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +25,9 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.16.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
