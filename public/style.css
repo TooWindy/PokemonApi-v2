@@ -1,0 +1,28 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cabin", sans-serif;
+  background: lightblue
+}
+
+.pokemon {
+  background: #f1f1f1;
+  min-width: 180px;
+  text-align: center;
+  padding: 25px;
+  border-radius: 6px;
+  border: 10px purple solid;
+  box-shadow: 4px 4px 4px black;
+}
+.pokemon .name{
+  font-size: 3em;
+  text-transform:capitalize;
+  font-weight: bold;
+  color:#333
+}
+.details {
+  display:flex;
+  justify-content: space-evenly;
+}

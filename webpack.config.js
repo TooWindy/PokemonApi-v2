@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   mode: "development",
   entry: [
-    './client/index.js'
+    'babel-polyfill', './client/index.js'
   ],
   output: {
     path: __dirname,
