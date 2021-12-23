@@ -7,6 +7,11 @@ body {
   background: lightblue
 }
 
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
 .pokemon {
   background: #f1f1f1;
   min-width: 180px;
@@ -25,4 +30,153 @@ body {
 .details {
   display:flex;
   justify-content: space-evenly;
+  margin: 1em;
+  white-space: pre-wrap;
+}
+.buttonContainer {
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 500px;
+  align-items: center;
+  margin: 2em
+}
+
+button {
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 32px;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: auto;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}
+
+.inputContainer {
+  display: flex;
+}
+.input-wrapper {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 75%;
+  box-sizing: border-box;
+  color: #2c3e50;
+  font-size: 13px;
+  ;
+}
+.submitButton {
+  margin-left: auto;
+  background-color: rgb(65, 144, 247);
+}
+
+.submitButton:hover {
+  background-color: rgb(53, 112, 190); /* Green */
+  color: white;
+}
+/* Classes for each individual button */
+
+.button {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  margin: 3px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: auto;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+}
+
+.randomButton {
+  background-color: #4CAF50;
+  padding: 15px 32px
+}
+.randomButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}
+
+.johtoButton {
+  background-color: #4CAF50;
+  padding: 15px 32px
+}
+.johtoButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}
+
+.kantoButton {
+  background-color: #4CAF50;
+  padding: 15px 32px
+}
+.kantoButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}
+
+.hoennButton {
+  background-color: #4CAF50;
+  padding: 15px 32px
+}
+.hoennButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}
+
+.sinnohButton {
+  background-color: #4CAF50;
+  padding: 15px 32px
+}
+.sinnohButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}
+
+.unovaButton {
+  background-color: #4CAF50;
+  padding: 15px 32px
+}
+.unovaButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}
+
+.kalosButton {
+  background-color: #4CAF50;
+  padding: 15px 32px
+}
+.kalosButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}
+
+.alolaButton {
+  background-color: #4CAF50;
+  padding: 15px 32px
+}
+.alolaButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}
+
+.galarButton {
+  background-color: #4CAF50;
+  padding: 15px 32px;
+  margin: auto;
+}
+.galarButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
 }
