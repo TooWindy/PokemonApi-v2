@@ -20,7 +20,9 @@ router.get('/', async(req,res,next) => {
 router.post('/search', async(req,res,next) => {
   try{
     const {pokemon} = req.body
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    //Pokemon searches must be in lowercase
+    const lowerCaseName = pokemon.slice(0,1).toLowerCase() + pokemon.slice(1)
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${lowerCaseName}`)
     const pokemonData = response.data
     res.send(pokemonData)
   }
