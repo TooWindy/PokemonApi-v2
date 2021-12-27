@@ -30,7 +30,6 @@ body {
 .details {
   display:flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
   margin: 1em;
   white-space: pre-wrap;
 }
@@ -85,7 +84,7 @@ button:hover {
   background-color: rgb(53, 112, 190); /* Green */
   color: white;
 }
-/* Classes for each individual button */
+/* Classes for each individual button. Not currently used. */
 
 .button {
   border: none;
@@ -182,6 +181,7 @@ button:hover {
   color: white;
 }
 
+/* Containers for when pokemon search fails */
 .errorContainer {
   background: #f1f1f1;
   /* min-width: 180px; */

@@ -3,7 +3,8 @@ import pokemon from './pokemon';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
-const middleware = applyMiddleware(thunkMiddleware,createLogger({collapsed: true}))
+const logger = createLogger({collapsed: true})
+const middleware = applyMiddleware(thunkMiddleware, logger)
 const reducer = combineReducers({pokemon})
 
 const store = createStore(reducer, middleware)

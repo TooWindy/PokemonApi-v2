@@ -5,6 +5,7 @@ import { getRandomPokemon } from "../redux/pokemon";
 import RegionButtons from "./RegionButtons";
 import { pokedexNumber } from "./assets/pokedexNumber";
 import { searchPokemon } from "../redux/pokemon";
+import '../Components/assets/typeColors.css'
 
 const Pokemon = () => {
   const dispatch = useDispatch()
@@ -46,7 +47,7 @@ const Pokemon = () => {
               </a>
             <div className="details">
                 <strong>Type:</strong> {pokemon.types.map((type) =>{
-                  return <div key={type.slot}>
+                  return <div key={type.slot} className={type.type.name}>
                           {" "}{type.type.name[0].toUpperCase()+type.type.name.slice(1)}{" "}
                         </div>
                   })}
