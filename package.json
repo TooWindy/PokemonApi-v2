@@ -11,7 +11,7 @@
     "build": "webpack",
     "serve": "webpack serve"
   },
-  "author": "",
+  "author": "Chris Eng",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.0",
