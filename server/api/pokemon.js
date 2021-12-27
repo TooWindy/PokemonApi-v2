@@ -28,6 +28,7 @@ router.post('/search', async(req,res,next) => {
   }
   catch(err){
     console.log("Search Failed")
+    res.send(null)
     next(err)
   }
 })

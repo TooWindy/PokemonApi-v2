@@ -47,7 +47,6 @@ export const searchPokemon = (pokemon) => {
     }
     catch(err){
       console.log("Search Failed")
-      window.alert("Search Failed")
     }
   }
 }

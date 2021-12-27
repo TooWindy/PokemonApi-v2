@@ -30,7 +30,9 @@ const Pokemon = () => {
         <input className={'input-wrapper'} placeholder="Enter Pokemon Name Here" onChange={onChangeHandler}></input>
         <button className={'submitButton'}>Submit</button>
       </form>
-      {pokemon.map((pokemon) => {
+      {/* A conditional checking if a pokemon is present in the current state.  */}
+      { pokemon[0] ? (
+      pokemon.map((pokemon) => {
         return (
           <div key={pokemon.id}>
             <h1 style={{'textAlign': 'center'}}>Current Region: {pokedexNumber(pokemon.id)}</h1>
@@ -57,7 +59,12 @@ const Pokemon = () => {
           </div>
         )
       })
-      }
+      // If no pokemon exists in the state (misspelt names return null by backend), render this instead
+      ) : <div className={'errorContainer'}>
+            <div className={'info'}>
+              Sorry, that pokemon does not exist!
+            </div>
+          </div>}
     <RegionButtons/>
     </div>
   )

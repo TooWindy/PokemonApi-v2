@@ -180,3 +180,22 @@ button:hover {
   background-color: #367738; /* Green */
   color: white;
 }
+
+.errorContainer {
+  background: #f1f1f1;
+  /* min-width: 180px; */
+  max-width: 494px;
+  text-align: center;
+  padding: 25px;
+  border-radius: 6px;
+  border: 10px purple solid;
+  box-shadow: 4px 4px 4px black;
+  margin-top: 20px;
+}
+
+.errorContainer .info {
+  font-size: 3em;
+  text-transform:capitalize;
+  font-weight: bold;
+  color:#333
+}
