@@ -1,5 +1,5 @@
 const db = require('./server/db/database')
-const port = process.env.PORT || 3000; // this can be very useful if you deploy to Heroku!
+const port = process.env.DATABASE_URL || 3000; // this can be very useful if you deploy to Heroku!
 const app = require('./server/app')
 
 db.sync()
