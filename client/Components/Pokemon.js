@@ -24,6 +24,7 @@ const Pokemon = () => {
     event.preventDefault()
     dispatch(searchPokemon(value))
   }
+
   return(
     <div className={'contentContainer'}>
       <form className={'inputContainer'} onSubmit={handleSubmit}>
@@ -46,15 +47,18 @@ const Pokemon = () => {
             <div className="details">
                 <strong>Type:</strong> {pokemon.types.map((type) =>{
                   return <div key={type.slot}>
-                          {" "}{type.type.name[0].toUpperCase()+type.type.name.slice(1)}
+                          {" "}{type.type.name[0].toUpperCase()+type.type.name.slice(1)}{" "}
                         </div>
                   })}
-                <strong> Ability(s): </strong> {pokemon.abilities.map((ability) => {
-                  return <div key={ability.slot}>
-                          {ability.ability.name[0].toUpperCase()+ability.ability.name.slice(1)}{" "}
-                        </div>
-                  })}
+                  <strong>Weight:</strong>{String(pokemon.weight).slice(0,-1)+"."+ String(pokemon.weight).slice(-1)}kg
             </div>
+            <div className="details">
+              <strong> Ability(s): </strong> {pokemon.abilities.map((ability) => {
+                  return <div key={ability.slot}>
+                          {ability.ability.name[0].toUpperCase()+ability.ability.name.slice(1)}
+                        </div>
+                  })}
+              </div>
           </div>
           </div>
         )
@@ -83,3 +87,4 @@ const Pokemon = () => {
           </ul>
       </div> */}
 export default Pokemon
+
