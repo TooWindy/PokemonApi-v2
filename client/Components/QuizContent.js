@@ -68,7 +68,7 @@ const QuizContent = (props) => {
             <div className="details">
               <strong> Ability(s): </strong> {pokemon.abilities.map((ability) => {
                   return <div key={ability.slot}>
-                          {ability.ability.name[0].toUpperCase()+ability.ability.name.slice(1)}
+                          {ability.ability.name[0].toUpperCase()+ability.ability.name.slice(1) + " "}
                         </div>
                   })}
               </div>

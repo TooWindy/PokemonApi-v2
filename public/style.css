@@ -12,6 +12,10 @@ body {
   flex-direction: column;
   align-content: center;
 }
+
+.title {
+  text-align: center;
+}
 .pokemon {
   background: #f1f1f1;
   min-width: 180px;
@@ -180,6 +184,14 @@ button:hover {
   color: white;
 }
 
+.playQuiz {
+  background-color: purple;
+}
+
+.quitQuiz {
+  background-color: red;
+  margin-top: 10px;
+}
 /* Containers for when pokemon search fails */
 .errorContainer {
   background: #f1f1f1;

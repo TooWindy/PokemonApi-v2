@@ -5,11 +5,13 @@ import { getRandomPokemon } from "../redux/pokemon";
 import RegionButtons from "./RegionButtons";
 import { pokedexNumber } from "./assets/pokedexNumber";
 import { searchPokemon } from "../redux/pokemon";
+import { useHistory } from "react-router-dom";
 import '../Components/assets/typeColors.css'
 
 const Pokemon = () => {
   const dispatch = useDispatch()
   const pokemon = useSelector((state) => state.pokemon || [])
+  const history = useHistory()
   // const [region, setRegion] = useState("Random")
   const [value, setValue] = useState("")
 
@@ -26,10 +28,13 @@ const Pokemon = () => {
     dispatch(searchPokemon(value))
   }
 
+  const quizClick = () => {
+    history.push('/quiz')
+  }
   return(
     <div className={'contentContainer'}>
       <form className={'inputContainer'} onSubmit={handleSubmit}>
-        <input className={'input-wrapper'} placeholder="Enter Pokemon Name Here" onChange={onChangeHandler}></input>
+        <input className={'input-wrapper'} placeholder="Enter Pokemon name here" onChange={onChangeHandler}></input>
         <button className={'submitButton'}>Submit</button>
       </form>
       {/* A conditional checking if a pokemon is present in the current state.  */}
@@ -37,7 +42,7 @@ const Pokemon = () => {
       pokemon.map((pokemon) => {
         return (
           <div key={pokemon.id}>
-            <h1 style={{'textAlign': 'center'}}>Current Region: {pokedexNumber(pokemon.id)}</h1>
+            <h1 className={'title'}>Current Region: {pokedexNumber(pokemon.id)}</h1>
           <div className="pokemon" >
             <div className={"name"}>
             {pokemon.name}
@@ -71,6 +76,7 @@ const Pokemon = () => {
             </div>
           </div>}
     <RegionButtons/>
+    <button className={'playQuiz'} onClick={quizClick}> Play Quiz</button>
     </div>
   )
 }
