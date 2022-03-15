@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRandomPokemon } from "../redux/pokemon";
 import { useHistory } from "react-router-dom";
 import QuizContent from "./QuizContent";
+import QuizAnswer from "./QuizAnswer";
 import { searchPokemon } from "../redux/pokemon";
 
 const QuizContainer = () => {
@@ -43,6 +44,9 @@ const QuizContainer = () => {
         </form>
         <div className="pokemon">
           <QuizContent pokemon={pokemon} answer={answer} setAnswer={setAnswer}/>
+        </div>
+        <div className="answerWrapper">
+          <QuizAnswer/>
         </div>
         <button className={"quitQuiz"} onClick={quitClick}>Quit</button>
       </div>
