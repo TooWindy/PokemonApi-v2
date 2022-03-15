@@ -225,8 +225,22 @@ button:hover {
   border: 10px grey solid;
   box-shadow: 4px 4px 4px black;
 }
+.labelContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .answerContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.type1Align {
+  margin-left: 10px;
+}
+
+.genAlign {
+  margin-left:10px
 }
