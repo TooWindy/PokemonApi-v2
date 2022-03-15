@@ -2,10 +2,9 @@ import React, { useState } from "react";
 
 const QuizContent = (props) => {
   const pokemon= props.pokemon[0]
-  const [answer,setAnswer] = useState(false)
 
   //If a correct answer is given, render this
-  if(answer){
+  if(props.answer){
     return (
     <div className={'contentContainer'}>
       {props.pokemon[0] ? (
@@ -56,7 +55,22 @@ const QuizContent = (props) => {
             <div className={"name"}>
             ?????
             </div>
-              <img src={pokemon.sprites.front_default} />
+          </div>
+        </div>
+      ) : <div>
+            <div className={'info'}>
+             <h1>Loading....</h1>
+          </div>
+        </div>}
+    </div>
+    )
+  }
+}
+
+export default QuizContent
+
+//Pokemon information
+{/* <img src={pokemon.sprites.front_default} />
             <div className="details">
                 <strong>Type:</strong> {pokemon.types.map((type) =>{
                   return <div key={type.slot} className={type.type.name}>
@@ -71,17 +85,4 @@ const QuizContent = (props) => {
                           {ability.ability.name[0].toUpperCase()+ability.ability.name.slice(1) + " "}
                         </div>
                   })}
-              </div>
-          </div>
-        </div>
-      ) : <div>
-            <div className={'info'}>
-             <h1>Loading....</h1>
-          </div>
-        </div>}
-    </div>
-    )
-  }
-}
-
-export default QuizContent
+              </div> */}
