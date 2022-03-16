@@ -1,8 +1,13 @@
 import React from "react";
+import QuizHints from "./QuizHints";
 
-const QuizAnswer = () => {
+const QuizAnswer = (props) => {
+  const pokemon = props.pokemon
+  // const correctPokemon = props.pokemon[0]
+
   return (
     <div>
+      {/* {console.log(props)} */}
       <div className= 'labelContainer'>
         <h3 className='genAlign'>
           Gen
@@ -20,13 +25,14 @@ const QuizAnswer = () => {
          Weight
         </h3>
       </div>
-      <div className="answerContainer">
-        <img src="/correctAnswer.png"/>
-        <img src="/correctAnswer.png"/>
-        <img src="/correctAnswer.png"/>
-        <img src="/correctAnswer.png"/>
-        <img src="/correctAnswer.png"/>
-      </div>
+      {pokemon.map((item)=>{
+         return (
+           <div key={item.id}>
+             <QuizHints pokemon={item} correctPokemon={props.correctPokemon} startPokemon={props.startPokemon} />
+           </div>
+         )
+      })}
+
     </div>
   )
 }

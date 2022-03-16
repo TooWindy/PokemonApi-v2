@@ -4,7 +4,7 @@ import { getRandomPokemon } from "../redux/pokemon";
 import { useHistory } from "react-router-dom";
 import QuizContent from "./QuizContent";
 import QuizAnswer from "./QuizAnswer";
-import { searchPokemon } from "../redux/pokemon";
+import { guessPokemon } from "../redux/pokemon";
 
 const QuizContainer = () => {
   const dispatch = useDispatch()
@@ -12,6 +12,9 @@ const QuizContainer = () => {
   const pokemon = useSelector((state) => state.pokemon || [])
   const [answer, setAnswer] = useState(false)
   const [value, setValue] = useState("")
+
+  const correctPokemon = pokemon[0]
+  let startPokemon = null
 
   useEffect(() => {
     dispatch(getRandomPokemon())
@@ -27,26 +30,27 @@ const QuizContainer = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    // dispatch(searchPokemon(value))
+    dispatch(guessPokemon(value))
     event.target.reset()
-    setValue("")
+
   }
   return (
     <div className={"contentContainer"}>
-        {answer ? (
+      {/* {console.log(startPokemon)} */}
+      {answer ? (
         <h1 className={"title"}>Correct!</h1>
         ) :
         <h1 className={"title"}>Name that pokemon! </h1>
         }
-        <form className={'inputContainer'} onSubmit={handleSubmit}>
-          <input className={'input-wrapper'} placeholder="Enter Pokemon name here" onChange={onChangeHandler}></input>
-          <button className={'submitButton'}>Submit</button>
-        </form>
+      <form className={'inputContainer'} onSubmit={handleSubmit}>
+        <input className={'input-wrapper'} placeholder="Enter Pokemon name here" onChange={onChangeHandler}></input>
+        <button className={'submitButton'}>Submit</button>
+      </form>
         <div className="pokemon">
           <QuizContent pokemon={pokemon} answer={answer} setAnswer={setAnswer}/>
         </div>
         <div className="answerWrapper">
-          <QuizAnswer/>
+          <QuizAnswer pokemon={pokemon} correctPokemon={correctPokemon} startPokemon={value} />
         </div>
         <button className={"quitQuiz"} onClick={quitClick}>Quit</button>
       </div>

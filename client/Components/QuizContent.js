@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 const QuizContent = (props) => {
-  const pokemon= props.pokemon[0]
+  const pokemon= props.pokemon
 
   //If a correct answer is given, render this
   if(props.answer){
     return (
     <div className={'contentContainer'}>
-      {props.pokemon[0] ? (
+      {props.pokemon ? (
         <div>
           {/* {console.log(props.pokemon[0].sprites.front_default)}
           <img src={props.pokemon[0].sprites.front_default} className={'img'}></img> */}
@@ -47,7 +47,7 @@ const QuizContent = (props) => {
   else{
     return(
       <div className={'contentContainer'}>
-      {props.pokemon[0] ? (
+      {props.pokemon ? (
         <div>
           {/* {console.log(props.pokemon[0].sprites.front_default)}
           <img src={props.pokemon[0].sprites.front_default} className={'img'}></img> */}
