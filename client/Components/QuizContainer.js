@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getRandomPokemon } from "../redux/pokemon";
 import { useHistory } from "react-router-dom";
 import QuizContent from "./QuizContent";
 import QuizAnswer from "./QuizAnswer";
-import { guessPokemon } from "../redux/pokemon";
+import { getRandomPokemon } from "../redux/pokemon";
+import { guessPokemon, quizPokemon } from "../redux/quiz";
 
 const QuizContainer = () => {
   const dispatch = useDispatch()
   const history = useHistory()
   const pokemon = useSelector((state) => state.pokemon || [])
+  const guesses = useSelector((state) => state.guesses || [])
   const [answer, setAnswer] = useState(false)
   const [value, setValue] = useState("")
 
-  const correctPokemon = pokemon[0]
-  let startPokemon = null
-
   useEffect(() => {
     dispatch(getRandomPokemon())
+    dispatch(quizPokemon())
   },[])
 
   const quitClick = () => {
@@ -33,6 +32,9 @@ const QuizContainer = () => {
     dispatch(guessPokemon(value))
     event.target.reset()
 
+  if(value === pokemon[0].name){
+    setAnswer(true)
+  }
   }
   return (
     <div className={"contentContainer"}>
@@ -50,7 +52,7 @@ const QuizContainer = () => {
           <QuizContent pokemon={pokemon} answer={answer} setAnswer={setAnswer}/>
         </div>
         <div className="answerWrapper">
-          <QuizAnswer pokemon={pokemon} correctPokemon={correctPokemon} startPokemon={value} />
+          <QuizAnswer pokemon={pokemon} guesses={guesses} />
         </div>
         <button className={"quitQuiz"} onClick={quitClick}>Quit</button>
       </div>

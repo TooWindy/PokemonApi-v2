@@ -1,19 +1,20 @@
 import React from "react";
 
 const QuizHint = (props) => {
-  let pokemon = props.pokemon
-  const startPokemon = props.startPokemon
-  const correctPokemon = props.correctPokemon
+  const pokemon = props.pokemon[0]
+  const guesses = props.guesses
 
 
-  if(startPokemon){
+
+  if(guesses && pokemon){
   return (
     <div className="answerContainer">
       <img src="/correctAnswer.png"/>
-      {/* {console.log(props)} */}
+      {console.log( "correct--- " + pokemon.name+ "\n" + "current--- " + guesses.name)}
+      {/* {console.log(guesses.name)} */}
 {/* Checking if type 1 matches up*/}
       {
-        correctPokemon.types[0].type.name === pokemon.types[0].type.name ? (
+        guesses.types[0].type.name === pokemon.types[0].type.name ? (
         <img src='/correctAnswer.png'/>
         ): <img src='/wrongAnswer.png'/>
       }
@@ -25,7 +26,7 @@ const QuizHint = (props) => {
   }
   else{
     return (
-      <h1>Start Guessing! {console.log(props)}</h1>
+      <h1>Invalid Pokemon!</h1>
     )
   }
 }

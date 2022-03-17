@@ -3,7 +3,6 @@ import axios from "axios"
 //Action Types:
 const GET_POKEMON = "GET_POKEMON"
 const SEARCH_POKEMON = "SEARCH_POKEMON"
-const GUESS_POKEMON = "GUESS_POKEMON"
 
 //Action Creators:
 const _getPokemon = (pokemon) => {
@@ -20,12 +19,6 @@ const _searchPokemon = (pokemon) => {
   }
 }
 
-const _guessPokemon = (guessPokemon) => {
-  return {
-    type: GUESS_POKEMON,
-    guessPokemon
-  }
-}
 // const _getKantoPokemon=(pokemon) => {
 //   return {
 //     type: GET_KANTO_POKEMON,
@@ -33,6 +26,7 @@ const _guessPokemon = (guessPokemon) => {
 //   }
 // }
 //Thunks
+
 export const getRandomPokemon = () => {
   return async(dispatch) => {
     try{
@@ -55,19 +49,6 @@ export const searchPokemon = (pokemon) => {
     }
     catch(err){
       console.log("Search Failed")
-    }
-  }
-}
-
-export const guessPokemon = (pokemon) => {
-  return async(dispatch) => {
-    try {
-      const response = await axios.post('/api/pokemon/search', {pokemon} )
-      const responseData = response.data
-      dispatch(_guessPokemon(responseData))
-    }
-    catch(err){
-      console.log("Guess Failed")
     }
   }
 }
@@ -185,8 +166,6 @@ export default function reducer(state = initialState, action) {
       return [action.pokemon];
     case SEARCH_POKEMON:
       return [action.pokemon];
-    case GUESS_POKEMON:
-      return [...state, action.guessPokemon]
     default:
       return state
   }

@@ -3,6 +3,7 @@ import QuizHints from "./QuizHints";
 
 const QuizAnswer = (props) => {
   const pokemon = props.pokemon
+  const guesses = props.guesses
   // const correctPokemon = props.pokemon[0]
 
   return (
@@ -25,10 +26,11 @@ const QuizAnswer = (props) => {
          Weight
         </h3>
       </div>
-      {pokemon.map((item)=>{
+      {guesses.map((item)=>{
          return (
            <div key={item.id}>
-             <QuizHints pokemon={item} correctPokemon={props.correctPokemon} startPokemon={props.startPokemon} />
+             {/* {console.log(item)} */}
+             <QuizHints pokemon={pokemon} guesses={item} />
            </div>
          )
       })}
