@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import QuizContent from "./QuizContent";
 import QuizAnswer from "./QuizAnswer";
-import { getRandomPokemon } from "../redux/pokemon";
+import { getRandomPokemon, searchPokemon } from "../redux/pokemon";
 import { guessPokemon, quizPokemon } from "../redux/quiz";
 
 const QuizContainer = () => {
@@ -31,11 +31,11 @@ const QuizContainer = () => {
     event.preventDefault()
     dispatch(guessPokemon(value))
     event.target.reset()
-
-  if(value === pokemon[0].name){
+    if(value === pokemon[0].name){
     setAnswer(true)
+    }
   }
-  }
+
   return (
     <div className={"contentContainer"}>
       {/* {console.log(startPokemon)} */}

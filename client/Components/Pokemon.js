@@ -38,7 +38,7 @@ const Pokemon = () => {
         <button className={'submitButton'}>Submit</button>
       </form>
       {/* A conditional checking if a pokemon is present in the current state.  */}
-      { pokemon[0] ? (
+      {pokemon[0] ? (
       pokemon.map((pokemon) => {
         return (
           <div key={pokemon.id}>

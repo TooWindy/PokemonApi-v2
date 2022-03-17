@@ -11,7 +11,6 @@ const QuizHint = (props) => {
     <div className="answerContainer">
       <img src="/correctAnswer.png"/>
       {console.log( "correct--- " + pokemon.name+ "\n" + "current--- " + guesses.name)}
-      {/* {console.log(guesses.name)} */}
 {/* Checking if type 1 matches up*/}
       {
         guesses.types[0].type.name === pokemon.types[0].type.name ? (

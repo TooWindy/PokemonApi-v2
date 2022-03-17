@@ -27,7 +27,13 @@ export const guessPokemon = (pokemon) => {
     try {
       const response = await axios.post('/api/pokemon/search', {pokemon} )
       const responseData = response.data
-      dispatch(_guessPokemon(responseData))
+      //Only send something back if the data isn't undefined
+      if(response.data) {
+        dispatch(_guessPokemon(responseData))
+      }
+      else{
+        console.log("Invalid Pokemon")
+      }
     }
     catch(err){
       console.log("Guess Failed")
