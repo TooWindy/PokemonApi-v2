@@ -12,6 +12,7 @@ const QuizContainer = () => {
   const pokemon = useSelector((state) => state.pokemon || [])
   const guesses = useSelector((state) => state.guesses || [])
   const [answer, setAnswer] = useState(false)
+  const [header, setHeader] = useState("Name that pokemon!")
   const [value, setValue] = useState("")
 
   useEffect(() => {
@@ -31,19 +32,23 @@ const QuizContainer = () => {
     event.preventDefault()
     dispatch(guessPokemon(value))
     event.target.reset()
+    //If user guesses correctly
     if(value === pokemon[0].name){
     setAnswer(true)
+    setHeader("Correct!")
+    }
+    //If user surpasses 6 guess, the game ends
+    if(guesses.length == 2){
+      setAnswer(true)
+      setHeader("Nice Try...")
     }
   }
+
 
   return (
     <div className={"contentContainer"}>
       {/* {console.log(startPokemon)} */}
-      {answer ? (
-        <h1 className={"title"}>Correct!</h1>
-        ) :
-        <h1 className={"title"}>Name that pokemon! </h1>
-        }
+      <h1 className={"title"}>{header}</h1>
       <form className={'inputContainer'} onSubmit={handleSubmit}>
         <input className={'input-wrapper'} placeholder="Enter Pokemon name here" onChange={onChangeHandler}></input>
         <button className={'submitButton'}>Submit</button>
