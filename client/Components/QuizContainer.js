@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import QuizContent from "./QuizContent";
 import QuizAnswer from "./QuizAnswer";
-import { getRandomPokemon, searchPokemon } from "../redux/pokemon";
+import { getRandomPokemon } from "../redux/pokemon";
 import { guessPokemon, quizPokemon } from "../redux/quiz";
 
 const QuizContainer = () => {
