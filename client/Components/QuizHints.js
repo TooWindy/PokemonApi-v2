@@ -26,48 +26,49 @@ const QuizHint = (props) => {
 {/* Checking if generation matches */}
       {
         generationNumber(guesses.id) === generationNumber(pokemon.id) ? (
-          <img src={green}/>
+          <img className='iconSize' src={green}/>
         ) :  generationNumber(guesses.id) < generationNumber(pokemon.id) ? (
-          <img src={upIcon}/>
+          <img className='iconSize' src={upIcon}/>
         ) :
-        <img src={downIcon}/>
+        <img className='iconSize' src={downIcon}/>
       }
 {/* Checking if type 1 matches up*/}
       {
         guesses.types[0].type.name === pokemon.types[0].type.name ? (
-        <img src={green}/>
-        ): <img src={red}/>
+        <img className='iconSize' src={green}/>
+        ): <img className='iconSize' src={red}/>
       }
 {/* Checking if type 2 matches */}
       {
         // If both pokemon are dual type, do regular logic. If not, render blue square instead. Blue square means correct pokemon is monotype
         pokemon.types[1] && guesses.types[1] ? (
           guesses.types[1].type.name === pokemon.types[1].type.name ? (
-          <img src={green}/>
-         ): <img src={red}/>
+          <img className='iconSize' src={green}/>
+         ): <img className='iconSize' src={red}/>
         //  If the guessed pokemon is monotype but the correct pokemon is dual type
         ): guesses.types.length === 1  && pokemon.types.length === 2 ? (
-          <img src={red}/>
+          <img className='iconSize' src={red}/>
         ):
-        <img src={blue}/>
+        <img className='iconSize' src={blue}/>
       }
 {/* Checking if height matches */}
       {
         toInches(guesses.height) === toInches(pokemon.height) ? (
-          <img src={green}/>
+          <img className='iconSize' src={green}/>
           //If guess height is less than the correct pokemon height
         ): toInches(guesses.height) < toInches(pokemon.height) ? (
-          <img src={upIcon}/>
-        ) : <img src={downIcon}/>
+          <img className='iconSize' src={upIcon}/>
+        ) : <img className='iconSize' src={downIcon}/>
       }
 {/* Checking if weight matches */}
       {
         toPounds(guesses.weight) === toPounds(pokemon.weight) ? (
-          <img src={green}/>
+          <img className='iconSize' src={green}/>
         ) : toPounds(guesses.weight) < toPounds(pokemon.weight) ? (
-          <img src={upIcon}/>
-        ) : <img src={downIcon}/>
+          <img className='iconSize' src={upIcon}/>
+        ) : <img className='iconSize' src={downIcon}/>
       }
+      <img className='guessPokemonIcon' src={guesses.sprites.front_default} />
     </div>
   )
   }

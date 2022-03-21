@@ -218,7 +218,7 @@ button:hover {
 .answerWrapper {
   background: #f1f1f1;
   margin-top: 10px;
-  min-width: 400px;
+  min-width: 500px;
   text-align: center;
   padding: 25px;
   border-radius: 6px;
@@ -243,4 +243,21 @@ button:hover {
 
 .genAlign {
   margin-left:10px
+}
+
+.weightAlign {
+  margin-left: 10px;
+}
+
+.iconSize {
+  height: 60px;
+  width: 60px
+}
+
+.guessPokemonIcon {
+  width: 90px;
+  margin-left: -15px;
+  margin-right: -10px;
+  margin-top: -13px
+  /* padding-left: 10px */
 }

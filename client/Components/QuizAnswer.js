@@ -25,6 +25,9 @@ const QuizAnswer = (props) => {
         <h3>
          Weight
         </h3>
+        <h3>
+          Guess:
+        </h3>
       </div>
       {guesses.map((item)=>{
          return (
