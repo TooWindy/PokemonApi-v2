@@ -61,18 +61,18 @@ const QuizContainer = () => {
     event.preventDefault()
     dispatch(guessPokemon(value))
     event.target.reset()
+
     //If user guesses correctly
-    if(value === pokemon[0].name){
-    setAnswer(true)
-    setHeader("Correct!")
+    if(value.toLowerCase() === pokemon[0].name){
+      setAnswer(true)
+      setHeader("Correct!")
     }
-    //If user surpasses 6 guess, the game ends
-    if(guesses.length === 5){
+    //If user surpasses 6 guesses, the game ends
+    if(guesses.length > 4 && value.toLowerCase() !== pokemon[0].name){
       setAnswer(true)
       setHeader("Game Over!")
     }
   }
-
 
   return (
     <div className={"contentContainer"}>
