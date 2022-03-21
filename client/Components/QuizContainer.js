@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import QuizContent from "./QuizContent";
 import QuizAnswer from "./QuizAnswer";
 import { getRandomPokemon } from "../redux/pokemon";
-import { guessPokemon, quizPokemon } from "../redux/quiz";
+import { guessPokemon, quizPokemon, clearPokemon } from "../redux/quiz";
 
 const QuizContainer = () => {
   const dispatch = useDispatch()
@@ -12,7 +12,7 @@ const QuizContainer = () => {
   const pokemon = useSelector((state) => state.pokemon || [])
   const guesses = useSelector((state) => state.guesses || [])
   const [answer, setAnswer] = useState(false)
-  const [header, setHeader] = useState("Name that pokemon!")
+  const [header, setHeader] = useState("Name that Pokemon!")
   const [value, setValue] = useState("")
   const [hardMode, setHardMode] = useState(false)
 
@@ -31,27 +31,29 @@ const QuizContainer = () => {
 
   const hardClick = () => {
     setHardMode(true)
-    //dispatch clear guesses
-    //dispatch to get a random pokemon (for answer)
+    setAnswer(false)
+    setHeader("Name that Pokemon!")
+    dispatch(clearPokemon())
+    //Get a new random pokemon
     dispatch(getRandomPokemon())
-    //dispatch to get a quiz pokemon
+    //Get a new starting guessed pokemon
     dispatch(quizPokemon())
   }
 
   const normalClick = () => {
     setHardMode(false)
-    //dispatch clear guesses
-    //dispatch to get a random pokemon (for answer)
+    setAnswer(false)
+    setHeader("Name that Pokemon!")
+    dispatch(clearPokemon())
     dispatch(getRandomPokemon())
-    //dispatch to get a quiz pokemon
     dispatch(quizPokemon())
   }
 
   const playAgainClick = () => {
-    //dispatch clear guesses
-    //dispatch to get a random pokemon (for answer)
+    setAnswer(false)
+    setHeader("Name that Pokemon!")
+    dispatch(clearPokemon())
     dispatch(getRandomPokemon())
-    //dispatch to get a quiz pokemon
     dispatch(quizPokemon())
   }
 
@@ -95,12 +97,12 @@ const QuizContainer = () => {
         <button className={"quitQuiz"} onClick={quitClick}>Quit</button>
         {
           hardMode ? (
-            <button className='normalMode'> Normal Mode</button>
-          ) : <button className='hardMode'> Hard Mode </button>
+            <button className='normalMode' onClick={normalClick}> Normal Mode</button>
+          ) : <button className='hardMode' onClick={hardClick}> Hard Mode </button>
         }
         {
           answer ? (
-          <button> Play Again!</button>
+          <button onClick={playAgainClick}> Play Again!</button>
           ): null
         }
         </div>

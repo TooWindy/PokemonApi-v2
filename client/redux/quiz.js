@@ -3,6 +3,7 @@ import axios from "axios";
 //Action Types:
 const GUESS_POKEMON = "GUESS_POKEMON"
 const QUIZ_POKEMON = "QUIZ_POKEMON"
+const CLEAR_POKEMON = "CLEAR_POKEMON"
 
 //Action Creators:
 
@@ -20,6 +21,11 @@ const _getQuizPokemon = (pokemon) => {
   }
 }
 
+export const clearPokemon = () => {
+  return {
+    type: CLEAR_POKEMON
+  }
+}
 //Thunk
 
 export const guessPokemon = (pokemon) => {
@@ -62,6 +68,8 @@ export default function reducer(state = initialState, action) {
       return [action.pokemon]
     case GUESS_POKEMON:
       return [...state, action.pokemon];
+    case CLEAR_POKEMON:
+      return [];
     default:
       return state
   }
