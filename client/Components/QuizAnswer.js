@@ -4,7 +4,6 @@ import QuizHints from "./QuizHints";
 const QuizAnswer = (props) => {
   const pokemon = props.pokemon
   const guesses = props.guesses
-  // const correctPokemon = props.pokemon[0]
 
   return (
     <div>

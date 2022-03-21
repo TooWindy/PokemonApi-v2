@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const QuizContent = (props) => {
   const pokemon= props.pokemon[0]
   const guesses = props.guesses
+  const hardMode = props.hardMode
 
 
   const nameHint = (length) => {
@@ -64,15 +65,16 @@ const QuizContent = (props) => {
          <div className={"name"}>
            {/* If guesses exceed 4, reveal first letter of pokemon + how many letter spaces */}
           {
-            guesses.length > 4 && !props.hardMode ? (
+            guesses.length > 4 && !hardMode ? (
               pokemon.name[0].toUpperCase() +nameHint(pokemon.name.length-1)
             ) : <a>????</a>
           }
          </div>
          <div className="details">
+          {/* If guesses exceed 3, reveal the type text colors */}
              <strong>Type:</strong>
              {
-               guesses.length > 3 && !props.hardMode ? (
+               guesses.length > 3 && !hardMode ? (
                   pokemon.types.map((type) =>{
                     return <div key={type.slot} className={type.type.name}>
                        ????
@@ -86,7 +88,7 @@ const QuizContent = (props) => {
            <strong> Ability(s): </strong>
            {/* 4 guesses reveals the correct pokemon's abilities */}
            {
-             guesses.length > 2 && !props.hardMode ? (
+             guesses.length > 2 && !hardMode ? (
                pokemon.abilities.map((ability) => {
                return <div key={ability.slot}>
                        {ability.ability.name[0].toUpperCase()+ability.ability.name.slice(1)}

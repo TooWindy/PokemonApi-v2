@@ -33,20 +33,26 @@ const QuizContainer = () => {
     setHardMode(true)
     //dispatch clear guesses
     //dispatch to get a random pokemon (for answer)
+    dispatch(getRandomPokemon())
     //dispatch to get a quiz pokemon
+    dispatch(quizPokemon())
   }
 
   const normalClick = () => {
     setHardMode(false)
     //dispatch clear guesses
     //dispatch to get a random pokemon (for answer)
+    dispatch(getRandomPokemon())
     //dispatch to get a quiz pokemon
+    dispatch(quizPokemon())
   }
 
   const playAgainClick = () => {
     //dispatch clear guesses
     //dispatch to get a random pokemon (for answer)
+    dispatch(getRandomPokemon())
     //dispatch to get a quiz pokemon
+    dispatch(quizPokemon())
   }
 
   const handleSubmit = (event) => {
@@ -59,7 +65,7 @@ const QuizContainer = () => {
     setHeader("Correct!")
     }
     //If user surpasses 6 guess, the game ends
-    if(guesses.length == 5){
+    if(guesses.length === 5){
       setAnswer(true)
       setHeader("Game Over!")
     }
