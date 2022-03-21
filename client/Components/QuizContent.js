@@ -2,7 +2,16 @@ import React, { useState } from "react";
 
 const QuizContent = (props) => {
   const pokemon= props.pokemon[0]
+  const guesses = props.guesses
 
+
+  const nameHint = (length) => {
+    let string =""
+    for(let i=0;i<length;i++){
+      string+="_ "
+    }
+    return string
+  }
   //If a correct answer is given, render this
   if(props.answer){
     return (
@@ -47,20 +56,52 @@ const QuizContent = (props) => {
   else{
     return(
       <div className={'contentContainer'}>
-      {props.pokemon ? (
-        <div>
-          {/* {console.log(props.pokemon[0].sprites.front_default)}
-          <img src={props.pokemon[0].sprites.front_default} className={'img'}></img> */}
-          <div>
-            <div className={"name"}>
-            ?????
-            </div>
-          </div>
-        </div>
-      ) : <div>
-            <div className={'info'}>
-             <h1>Loading....</h1>
-          </div>
+      {pokemon ? (
+       <div>
+       {/* {console.log(props.pokemon[0].sprites.front_default)}
+       <img src={props.pokemon[0].sprites.front_default} className={'img'}></img> */}
+       <div>
+         <div className={"name"}>
+           {/* If guesses exceed 4, reveal first letter of pokemon + how many letter spaces */}
+          {
+            guesses.length > 4 && !props.hardMode ? (
+              pokemon.name[0].toUpperCase() +nameHint(pokemon.name.length-1)
+            ) : <a>????</a>
+          }
+         </div>
+         <div className="details">
+             <strong>Type:</strong>
+             {
+               guesses.length > 3 && !props.hardMode ? (
+                  pokemon.types.map((type) =>{
+                    return <div key={type.slot} className={type.type.name}>
+                       ????
+                      </div>
+               })
+               ) : <a>???</a>
+             }
+               <strong>Weight:</strong> ???
+         </div>
+         <div className="details">
+           <strong> Ability(s): </strong>
+           {/* 4 guesses reveals the correct pokemon's abilities */}
+           {
+             guesses.length > 2 && !props.hardMode ? (
+               pokemon.abilities.map((ability) => {
+               return <div key={ability.slot}>
+                       {ability.ability.name[0].toUpperCase()+ability.ability.name.slice(1)}
+                     </div>
+               })
+             ) : <a>???</a>
+           }
+
+           </div>
+       </div>
+     </div>
+   ) : <div>
+         <div className={'info'}>
+          <h1>Loading....</h1>
+       </div>
         </div>}
     </div>
     )

@@ -33,7 +33,7 @@ const Pokemon = () => {
   }
   return(
     <div className={'contentContainer'}>
-      <form className={'inputContainer'} onSubmit={handleSubmit}>
+      <form className={'homeInputContainer'} onSubmit={handleSubmit}>
         <input className={'input-wrapper'} placeholder="Enter Pokemon name here" onChange={onChangeHandler}></input>
         <button className={'submitButton'}>Submit</button>
       </form>

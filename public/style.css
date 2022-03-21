@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@ body {
 .contentContainer {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
 }
 
 .title {
@@ -68,6 +68,12 @@ button:hover {
 
 .inputContainer {
   display: flex;
+}
+
+/* This is so evertyhing is centered on the home page */
+.homeInputContainer {
+  display: flex;
+  padding-top: 100px;
 }
 .input-wrapper {
   padding: 15px;
@@ -189,10 +195,22 @@ button:hover {
   background-color: purple;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
 .quitQuiz {
   background-color: red;
-  margin-top: 10px;
 }
+
+.hardMode {
+  background-color: #333;
+}
+
+.normalMode {
+  background-color: slategrey;
+}
+
 /* Containers for when pokemon search fails */
 .errorContainer {
   background: #f1f1f1;
@@ -224,6 +242,11 @@ button:hover {
   border-radius: 6px;
   border: 10px grey solid;
   box-shadow: 4px 4px 4px black;
+}
+
+.quizTitle {
+  text-align: center;
+  padding-top: 100px;
 }
 .labelContainer {
   display: flex;
@@ -261,3 +284,4 @@ button:hover {
   margin-top: -13px
   /* padding-left: 10px */
 }
+
