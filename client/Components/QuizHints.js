@@ -1,4 +1,5 @@
 import React from "react";
+import { generationNumber } from "./assets/pokedexNumber";
 
 const QuizHint = (props) => {
   const pokemon = props.pokemon[0]
@@ -7,12 +8,30 @@ const QuizHint = (props) => {
   const green = '/squares/greenSquare.png'
   const blue = '/squares/blueSquare.png'
   const red = '/squares/redSquare.png'
+  const upIcon = '/squares/upIcon.png'
+  const downIcon = '/squares/downIcon.png'
+
+  const toInches = (num) => {
+    return num * 3.937
+  }
+
+  const toPounds = (num) => {
+    return num * 0.220462
+  }
 
   if(guesses && pokemon){
   return (
     <div className="answerContainer">
       {console.log( "correct--- " + pokemon.name+ "\n" + "current--- " + guesses.name)}
-      <img src={green}/>
+{/* Checking if generation matches */}
+      {
+        generationNumber(guesses.id) === generationNumber(pokemon.id) ? (
+          <img src={green}/>
+        ) :  generationNumber(guesses.id) < generationNumber(pokemon.id) ? (
+          <img src={upIcon}/>
+        ) :
+        <img src={downIcon}/>
+      }
 {/* Checking if type 1 matches up*/}
       {
         guesses.types[0].type.name === pokemon.types[0].type.name ? (
@@ -32,8 +51,23 @@ const QuizHint = (props) => {
         ):
         <img src={blue}/>
       }
-      <img src={green}/>
-      <img src={green}/>
+{/* Checking if height matches */}
+      {
+        toInches(guesses.height) === toInches(pokemon.height) ? (
+          <img src={green}/>
+          //If guess height is less than the correct pokemon height
+        ): toInches(guesses.height) < toInches(pokemon.height) ? (
+          <img src={upIcon}/>
+        ) : <img src={downIcon}/>
+      }
+{/* Checking if weight matches */}
+      {
+        toPounds(guesses.weight) === toPounds(pokemon.weight) ? (
+          <img src={green}/>
+        ) : toPounds(guesses.weight) < toPounds(pokemon.weight) ? (
+          <img src={upIcon}/>
+        ) : <img src={downIcon}/>
+      }
     </div>
   )
   }

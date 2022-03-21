@@ -21,3 +21,26 @@ export const pokedexNumber = (id) => {
       return "What the"
   }
 }
+
+export const generationNumber = (id) => {
+  switch(true){
+    case id >= 1 && id <= 151:
+      return 1
+    case id >=152 && id<=251:
+      return 2
+    case id >=252 && id <=386:
+      return 3
+    case id >= 387 && id <= 493:
+      return 4
+    case id >= 494 && id <= 649:
+      return 5
+    case id >= 650 && id<= 721:
+      return 6
+    case id >= 722 && id <= 809:
+      return 7
+    case id >= 810 && id <= 898:
+      return 8
+    default:
+      return 'Invalid Generation'
+  }
+}
