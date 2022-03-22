@@ -67,7 +67,7 @@ const QuizContainer = () => {
       setAnswer(true)
       setHeader("Correct!")
     }
-    //If user surpasses 6 guesses, the game ends
+    //If the user doesn't guess correctly on the 6th guess, the game ends
     if(guesses.length > 4 && value.toLowerCase() !== pokemon[0].name){
       setAnswer(true)
       setHeader("Game Over!")
@@ -76,7 +76,7 @@ const QuizContainer = () => {
 
   return (
     <div className={"contentContainer"}>
-      {/* {console.log(startPokemon)} */}
+      {/* {console.log(guesses.length)} */}
       <h1 className={"quizTitle"}>{header}</h1>
       {
         !answer ? (
