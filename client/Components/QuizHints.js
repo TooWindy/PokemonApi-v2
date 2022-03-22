@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { generationNumber } from "./assets/pokedexNumber";
 
 const QuizHint = (props) => {
@@ -11,6 +11,12 @@ const QuizHint = (props) => {
   const upIcon = '/squares/upIcon.png'
   const downIcon = '/squares/downIcon.png'
 
+  useEffect(() => {
+    if(pokemon && guesses){
+    console.log( "correct--- " + pokemon.name+ "\n" + "current--- " + guesses.name)
+    }
+  },[])
+
   const toInches = (num) => {
     return num * 3.937
   }
@@ -22,7 +28,7 @@ const QuizHint = (props) => {
   if(guesses && pokemon){
   return (
     <div className="answerContainer">
-      {console.log( "correct--- " + pokemon.name+ "\n" + "current--- " + guesses.name)}
+      {/* {console.log( "correct--- " + pokemon.name+ "\n" + "current--- " + guesses.name)} */}
 {/* Checking if generation matches */}
       {
         generationNumber(guesses.id) === generationNumber(pokemon.id) ? (
