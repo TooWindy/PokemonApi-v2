@@ -207,6 +207,12 @@ button:hover {
   background-color: rgb(143, 0, 0);
 }
 
+.giveUp {
+  background-color: #b13ffd;
+}
+.giveUp:hover {
+  background-color: #7829ad ;
+}
 .hardMode {
   background-color: #333;
 }

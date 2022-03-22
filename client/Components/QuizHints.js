@@ -13,7 +13,7 @@ const QuizHint = (props) => {
 
   useEffect(() => {
     if(pokemon && guesses){
-    console.log( "correct--- " + pokemon.name+ "\n" + "current--- " + guesses.name)
+      console.log( "correct--- " + pokemon.name+ "\n" + "current--- " + guesses.name)
     }
   },[])
 

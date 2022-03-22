@@ -40,7 +40,7 @@ const QuizContainer = () => {
     dispatch(quizPokemon())
   }
 
-  const normalClick = () => {
+  const normalModeClick = () => {
     setHardMode(false)
     setAnswer(false)
     setHeader("Name that Pokemon!")
@@ -57,6 +57,10 @@ const QuizContainer = () => {
     dispatch(quizPokemon())
   }
 
+  const giveUpClick = () => {
+    setAnswer(true)
+    setHeader("Game Over!")
+  }
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(guessPokemon(value))
@@ -97,13 +101,13 @@ const QuizContainer = () => {
         <button className={"quitQuiz"} onClick={quitClick}>Quit</button>
         {
           hardMode ? (
-            <button className='normalMode' onClick={normalClick}> Normal Mode</button>
+            <button className='normalMode' onClick={normalModeClick}> Normal Mode</button>
           ) : <button className='hardMode' onClick={hardClick}> Hard Mode </button>
         }
         {
           answer ? (
           <button onClick={playAgainClick}> Play Again!</button>
-          ): null
+          ): <button className='giveUp' onClick={giveUpClick}> I Give Up!</button>
         }
         </div>
       </div>
