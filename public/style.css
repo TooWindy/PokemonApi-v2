@@ -192,7 +192,11 @@ button:hover {
 }
 
 .playQuiz {
-  background-color: purple;
+  background-color: rgb(177, 0, 177);
+}
+
+.playQuiz:hover {
+  background-color: rgb(116, 0, 116)
 }
 
 .buttonContainer {

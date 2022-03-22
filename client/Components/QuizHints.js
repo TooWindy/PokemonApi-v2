@@ -74,7 +74,9 @@ const QuizHint = (props) => {
           <img className='iconSize' src={upIcon}/>
         ) : <img className='iconSize' src={downIcon}/>
       }
+      <a href={`https://bulbapedia.bulbagarden.net/wiki/${guesses.name}_(Pok%C3%A9mon)`} target='_blank'>
       <img className='guessPokemonIcon' src={guesses.sprites.front_default} />
+      </a>
     </div>
   )
   }
