@@ -10,6 +10,9 @@ const QuizHint = (props) => {
   const red = '/squares/redSquare.png'
   const upIcon = '/squares/upIcon.png'
   const downIcon = '/squares/downIcon.png'
+  const fastDown = '/squares/fastDownIcon.png'
+  const fastUp = '/squares/fastUpIcon.png'
+
 
   useEffect(() => {
     if(pokemon && guesses){
@@ -70,10 +73,27 @@ const QuizHint = (props) => {
       {
         toPounds(guesses.weight) === toPounds(pokemon.weight) ? (
           <img className='iconSize' src={green}/>
-        ) : toPounds(guesses.weight) < toPounds(pokemon.weight) ? (
-          <img className='iconSize' src={upIcon}/>
-        ) : <img className='iconSize' src={downIcon}/>
+        ): null
       }
+  {/* Lighter */}
+      {
+        toPounds(guesses.weight) > toPounds(pokemon.weight) ? (
+          // If the difference between the two weights is less than 50lbs
+          Math.abs(toPounds(guesses.weight) - toPounds(pokemon.weight)) < 50 ? (
+            <img className='iconSize' src={downIcon}/>
+            // Anything more than 50 render this instead
+          ):  <img className='iconSize' src={fastDown}/>
+        ): null
+      }
+  {/* Heavier */}
+      {
+        toPounds(guesses.weight) < toPounds(pokemon.weight) ? (
+          Math.abs(toPounds(guesses.weight) - toPounds(pokemon.weight)) < 50 ? (
+            <img className='iconSize' src={upIcon}/>
+          ):  <img className='iconSize' src={fastUp}/>
+        ): null
+      }
+
       <a href={`https://bulbapedia.bulbagarden.net/wiki/${guesses.name}_(Pok%C3%A9mon)`} target='_blank'>
       <img className='guessPokemonIcon' src={guesses.sprites.front_default} />
       </a>
