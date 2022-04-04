@@ -18,10 +18,10 @@ This game is based off of the popular game wordle, where you are given hints on 
 
 To submit a guess, simply type in the name of the pokemon in the search bar and click enter. Your guess will show up in the guesses box. You have a total of 6 attempts, where one "freebie" guess is given to you to start off. As you keep guessing, more information about the pokemon slowly be revealed to you. On each guess, images will be shown to you giving you hints of how related the correct pokemon is to your guess. The categories are Generation, Type 1, Type 2, Height, and Weight. The images that would be rendered under these categories are as follows:
 
-- ![alt text](./public/squares/greenSquare.png) = Correct
+- ![alt text](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/310/large-green-square_1f7e9.png) = Correct
 - ![alt text](./public/squares/redSquare.png) = Incorrect
 - ![alt text](./public/squares/blueSquare.png) = Null. This means that the correct pokemon is monotype.
-- [alt text](./public/squares/upIcon.png) = Up. The correct pokemon has a higher value in its respective category than your guess.
+- ![alt text](./public/squares/upIcon.png) = Up. The correct pokemon has a higher value in its respective category than your guess.
 - ![alt text](./public/squares/fastUpIcon.png) = Big Up. The correct pokemon has a MUCH higher value in its respective category than your guess. (As of right now this would only apply to the weight category)
 - ![alt text](./public/squares/downIcon.png) = Down. The correct pokemon has a lower value in its respective category than your guess.
 - ![alt text](./public/squares/fastDownIcon.png) = Big Down. The correct pokemon has a MUCH lower value in its respective category than your guess. (As of right now this would only apply to the weight category).
