@@ -93,7 +93,7 @@ const QuizHint = (props) => {
           ):  <img className='iconSize' src={fastUp}/>
         ): null
       }
-
+  {/* Guessed Pokemon Sprite */}
       <a href={`https://bulbapedia.bulbagarden.net/wiki/${guesses.name}_(Pok%C3%A9mon)`} target='_blank'>
       <img className='guessPokemonIcon' src={guesses.sprites.front_default} />
       </a>
