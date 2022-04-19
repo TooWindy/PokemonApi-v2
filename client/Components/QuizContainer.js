@@ -5,16 +5,22 @@ import QuizContent from "./QuizContent";
 import QuizAnswer from "./QuizAnswer";
 import { getRandomPokemon } from "../redux/pokemon";
 import { guessPokemon, quizPokemon, clearPokemon } from "../redux/quiz";
+import Modal from "react-modal";
+import ModalRegionButtons from "./ModalRegionButtons"
+
+Modal.setAppElement('#root')
 
 const QuizContainer = () => {
   const dispatch = useDispatch()
   const history = useHistory()
   const pokemon = useSelector((state) => state.pokemon || [])
   const guesses = useSelector((state) => state.guesses || [])
+  const [modalIsOpen,setIsOpen] = useState(false)
   const [answer, setAnswer] = useState(false)
   const [header, setHeader] = useState("Name that Pokemon!")
   const [value, setValue] = useState("")
   const [hardMode, setHardMode] = useState(false)
+  const [region, setRegion] = useState("Random")
 
   useEffect(() => {
     dispatch(getRandomPokemon())
@@ -78,6 +84,14 @@ const QuizContainer = () => {
     }
   }
 
+  const openModal = () => {
+    setIsOpen(true);
+  }
+
+  const closeModal = () => {
+    setIsOpen(false);
+  }
+
   return (
     <div className={"contentContainer"}>
       {/* {console.log(guesses.length)} */}
@@ -99,17 +113,35 @@ const QuizContainer = () => {
         </div>
         <div className="buttonContainer">
         <button className={"quitQuiz"} onClick={quitClick}>Quit</button>
-        {
-          hardMode ? (
-            <button className='normalMode' onClick={normalModeClick}> Normal Mode</button>
-          ) : <button className='hardMode' onClick={hardClick}> Hard Mode </button>
-        }
+        <button onClick={openModal}>Options</button>
         {
           answer ? (
           <button onClick={playAgainClick}> Play Again!</button>
           ): <button className='giveUp' onClick={giveUpClick}> I Give Up!</button>
         }
+
         </div>
+
+        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className={'modal'}>
+          <div>
+            <div>
+              <h2 className={"modalTitle"}>
+              Choose a Region:
+              </h2>
+            </div>
+          <div className="modalContent">
+            <ModalRegionButtons />
+            <div className ="optionButtons">
+              {
+                hardMode ? (
+                <button className='normalMode' onClick={normalModeClick}> Normal Mode</button>
+                ):<button className='hardMode' onClick={hardClick}> Hard Mode </button>
+              }
+              <button className={"quitQuiz"}onClick={closeModal}> Exit </button>
+            </div>
+          </div>
+        </div>
+      </Modal>
       </div>
   )
 }

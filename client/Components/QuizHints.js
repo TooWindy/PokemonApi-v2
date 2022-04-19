@@ -21,7 +21,7 @@ const QuizHint = (props) => {
   },[])
 
   const toInches = (num) => {
-    return num * 3.937
+    return num * 39.37
   }
 
   const toPounds = (num) => {
@@ -45,8 +45,9 @@ const QuizHint = (props) => {
       {
         guesses.types[0].type.name === pokemon.types[0].type.name ? (
         <img className='iconSize' src={green}/>
-        ): <img className='iconSize' src={red}/>
+        ):<img className='iconSize' src={red}/>
       }
+
 {/* Checking if type 2 matches */}
       {
         // If both pokemon are dual type, do regular logic. If not, render blue square instead. Blue square means correct pokemon is monotype
@@ -57,17 +58,30 @@ const QuizHint = (props) => {
         //  If the guessed pokemon is monotype but the correct pokemon is dual type
         ): guesses.types.length === 1  && pokemon.types.length === 2 ? (
           <img className='iconSize' src={red}/>
-        ):
-        <img className='iconSize' src={blue}/>
+        ): <img className='iconSize' src={blue}/>
       }
 {/* Checking if height matches */}
       {
         toInches(guesses.height) === toInches(pokemon.height) ? (
           <img className='iconSize' src={green}/>
           //If guess height is less than the correct pokemon height
-        ): toInches(guesses.height) < toInches(pokemon.height) ? (
-          <img className='iconSize' src={upIcon}/>
-        ) : <img className='iconSize' src={downIcon}/>
+        ): null
+      }
+  {/* Shorter */}
+      {
+        toInches(guesses.height) > toInches(pokemon.height) ? (
+          Math.abs(guesses.height - pokemon.height) < 15 ? (
+            <img className='iconSize' src={downIcon}/>
+          ): <img className='iconSize' src={fastDown}/>
+        ) : null
+      }
+  {/* Taller */}
+      {
+        toInches(guesses.height) < toInches(pokemon.height) ? (
+          Math.abs(guesses.height - pokemon.height) < 15 ? (
+            <img className='iconSize' src={upIcon}/>
+          ): <img className='iconSize' src={fastUp}/>
+        ) : null
       }
 {/* Checking if weight matches */}
       {

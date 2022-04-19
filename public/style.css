@@ -302,3 +302,36 @@ button:hover {
   /* padding-left: 10px */
 }
 
+.modal {
+  background: #f1f1f1;
+  margin: auto;
+  max-width:400px;
+  padding: 25px;
+  margin-top: 10%;
+  border-radius: 6px;
+  border: 10px rgb(120, 120, 237) solid;
+  box-shadow: 4px 4px 4px black;
+}
+
+/* .modalContent {
+  display: flex;
+  flex-direction: column;
+} */
+.modalTitle {
+  text-align: center;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.optionButtons{
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}

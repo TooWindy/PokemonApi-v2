@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getRandomPokemon } from "../redux/pokemon";
 import RegionButtons from "./RegionButtons";
+import ModalRegionButtons from "./ModalRegionButtons";
 import { pokedexNumber } from "./assets/pokedexNumber";
 import { searchPokemon } from "../redux/pokemon";
 import { useHistory } from "react-router-dom";
@@ -12,7 +13,6 @@ const Pokemon = () => {
   const dispatch = useDispatch()
   const pokemon = useSelector((state) => state.pokemon || [])
   const history = useHistory()
-  // const [region, setRegion] = useState("Random")
   const [value, setValue] = useState("")
 
   useEffect(() => {
@@ -30,6 +30,14 @@ const Pokemon = () => {
 
   const quizClick = () => {
     history.push('/quiz')
+  }
+
+  const openModal = () => {
+    setIsOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsOpen(false)
   }
   return(
     <div className={'contentContainer'}>
