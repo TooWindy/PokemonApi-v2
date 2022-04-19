@@ -59,6 +59,110 @@ export const quizPokemon = () => {
     }
   }
 }
+
+export const getKantoQuizPokemon = () => {
+  return async(dispatch) => {
+    try{
+      const response=  await axios.get('/api/pokemon/kanto')
+      const responseData = response.data
+      dispatch(_getQuizPokemon(responseData))
+    }
+    catch(err){
+      console.log("Couldn't get Kanto pokemon")
+    }
+  }
+}
+
+export const getJohtoQuizPokemon = () => {
+  return async(dispatch) => {
+    try{
+      const response = await axios.get('/api/pokemon/johto')
+      const responseData = response.data
+      dispatch(_getQuizPokemon(responseData))
+    }
+    catch(err){
+      console.log("Couldn't get Johto pokemon")
+    }
+  }
+}
+
+export const getHoennQuizPokemon = () => {
+  return async(dispatch) => {
+    try{
+      const response = await axios.get('/api/pokemon/hoenn')
+      const responseData = response.data
+      dispatch(_getQuizPokemon(responseData))
+    }
+    catch(err){
+      console.log("Couldn't get Hoenn pokemon")
+    }
+  }
+}
+
+export const getSinnohQuizPokemon = () => {
+  return async(dispatch) => {
+    try{
+      const response = await axios.get('/api/pokemon/sinnoh')
+      const responseData = response.data
+      dispatch(_getQuizPokemon(responseData))
+    }
+    catch(err){
+      console.log("Couldn't get Sinnoh pokemon")
+    }
+  }
+}
+
+export const getUnovaQuizPokemon = () => {
+  return async(dispatch) => {
+    try{
+      const response = await axios.get('/api/pokemon/unova')
+      const responseData = response.data
+      dispatch(_getQuizPokemon(responseData))
+    }
+    catch(err){
+      console.log("Couldn't get Unova pokemon")
+    }
+  }
+}
+
+export const getKalosQuizPokemon = () => {
+  return async(dispatch) => {
+    try{
+      const response = await axios.get('/api/pokemon/kalos')
+      const responseData = response.data
+      dispatch(_getQuizPokemon(responseData))
+    }
+    catch(err){
+      console.log("Couldn't get Kalos pokemon")
+    }
+  }
+}
+
+export const getAlolaQuizPokemon = () => {
+  return async(dispatch) => {
+    try{
+      const response = await axios.get('/api/pokemon/alola')
+      const responseData = response.data
+      dispatch(_getQuizPokemon(responseData))
+    }
+    catch(err){
+      console.log("Couldn't get Alola pokemon")
+    }
+  }
+}
+
+export const getGalarQuizPokemon = () => {
+  return async(dispatch) => {
+    try{
+      const response = await axios.get('/api/pokemon/galar')
+      const responseData = response.data
+      dispatch(_getQuizPokemon(responseData))
+    }
+    catch(err){
+      console.log("Couldn't get Galar pokemon")
+    }
+  }
+}
 //Reducer
 const initialState = []
 

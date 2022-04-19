@@ -94,7 +94,7 @@ const QuizContainer = () => {
 
   return (
     <div className={"contentContainer"}>
-      {console.log(region)}
+      {/* {console.log(region)} */}
       <h1 className={"quizTitle"}>{header}</h1>
       {
         !answer ? (
