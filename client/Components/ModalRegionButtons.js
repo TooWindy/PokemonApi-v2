@@ -69,7 +69,7 @@ const ModalRegionButtons = (props) => {
   }
   return (
     <div className="modalButtons">
-      <button onClick={randomQuizClick} >Random</button>
+      <button onClick={randomQuizClick} >All Regions</button>
       <button onClick={kantoQuizClick} >Kanto</button>
       <button onClick={johtoQuizClick} >Johto</button>
       <button onClick={hoennQuizClick} >Hoenn</button>
