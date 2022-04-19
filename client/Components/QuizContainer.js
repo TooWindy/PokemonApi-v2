@@ -20,7 +20,7 @@ const QuizContainer = () => {
   const [header, setHeader] = useState("Name that Pokemon!")
   const [value, setValue] = useState("")
   const [hardMode, setHardMode] = useState(false)
-  const [region, setRegion] = useState("Random")
+  const [region, setRegion] = useState("random")
 
   useEffect(() => {
     dispatch(getRandomPokemon())
@@ -94,7 +94,7 @@ const QuizContainer = () => {
 
   return (
     <div className={"contentContainer"}>
-      {/* {console.log(guesses.length)} */}
+      {console.log(region)}
       <h1 className={"quizTitle"}>{header}</h1>
       {
         !answer ? (
@@ -130,7 +130,7 @@ const QuizContainer = () => {
               </h2>
             </div>
           <div className="modalContent">
-            <ModalRegionButtons />
+            <ModalRegionButtons closeModal={closeModal} setRegion={setRegion}/>
             <div className ="optionButtons">
               {
                 hardMode ? (
