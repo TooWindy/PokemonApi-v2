@@ -167,7 +167,7 @@ const QuizContainer = () => {
               </h2>
             </div>
           <div className="modalContent">
-            <ModalRegionButtons closeModal={closeModal} setRegion={setRegion}/>
+            <ModalRegionButtons closeModal={closeModal} setRegion={setRegion} setAnswer={setAnswer}/>
             <div className ="optionButtons">
               {
                 hardMode ? (

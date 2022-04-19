@@ -9,12 +9,14 @@ const ModalRegionButtons = (props) => {
   const randomQuizClick = () => {
     dispatch(getRandomPokemon())
     dispatch(quizPokemon())
+    props.setAnswer(false)
     props.setRegion("random")
     props.closeModal()
   }
   const kantoQuizClick = () => {
     dispatch(getKantoPokemon())
     dispatch(getKantoQuizPokemon())
+    props.setAnswer(false)
     props.setRegion("kanto")
     props.closeModal()
   }
@@ -22,6 +24,7 @@ const ModalRegionButtons = (props) => {
   const johtoQuizClick = () => {
     dispatch(getJohtoPokemon())
     dispatch(getJohtoQuizPokemon())
+    props.setAnswer(false)
     props.setRegion('johto')
     props.closeModal()
   }
@@ -29,6 +32,7 @@ const ModalRegionButtons = (props) => {
   const hoennQuizClick = () => {
     dispatch(getHoennPokemon())
     dispatch(getHoennQuizPokemon())
+    props.setAnswer(false)
     props.setRegion('hoenn')
     props.closeModal()
   }
@@ -36,6 +40,7 @@ const ModalRegionButtons = (props) => {
   const sinnohQuizClick = () => {
     dispatch(getSinnohPokemon())
     dispatch(getSinnohQuizPokemon())
+    props.setAnswer(false)
     props.setRegion('sinnoh')
     props.closeModal()
   }
@@ -43,6 +48,7 @@ const ModalRegionButtons = (props) => {
   const unovaQuizClick = () => {
     dispatch(getUnovaPokemon())
     dispatch(getUnovaQuizPokemon())
+    props.setAnswer(false)
     props.setRegion('unova')
     props.closeModal()
   }
@@ -50,6 +56,7 @@ const ModalRegionButtons = (props) => {
   const kalosQuizClick = () => {
     dispatch(getKalosPokemon())
     dispatch(getKalosQuizPokemon())
+    props.setAnswer(false)
     props.setRegion('kalos')
     props.closeModal()
   }
@@ -57,6 +64,7 @@ const ModalRegionButtons = (props) => {
   const alolaQuizClick = () => {
     dispatch(getAlolaPokemon())
     dispatch(getAlolaQuizPokemon())
+    props.setAnswer(false)
     props.setRegion('alola')
     props.closeModal()
   }
@@ -64,6 +72,7 @@ const ModalRegionButtons = (props) => {
   const galarQuizClick =() => {
     dispatch(getGalarPokemon())
     dispatch(getGalarQuizPokemon())
+    props.setAnswer(false)
     props.setRegion('galar')
     props.closeModal()
   }

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getRandomPokemon } from "../redux/pokemon";
 import RegionButtons from "./RegionButtons";
-import ModalRegionButtons from "./ModalRegionButtons";
 import { pokedexNumber } from "./assets/pokedexNumber";
 import { searchPokemon } from "../redux/pokemon";
 import { useHistory } from "react-router-dom";
@@ -32,13 +31,6 @@ const Pokemon = () => {
     history.push('/quiz')
   }
 
-  const openModal = () => {
-    setIsOpen(true)
-  }
-
-  const closeModal = () => {
-    setIsOpen(false)
-  }
   return(
     <div className={'contentContainer'}>
       <form className={'homeInputContainer'} onSubmit={handleSubmit}>
