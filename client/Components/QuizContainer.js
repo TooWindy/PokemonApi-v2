@@ -17,7 +17,7 @@ const QuizContainer = () => {
   const guesses = useSelector((state) => state.guesses || [])
   const [modalIsOpen,setIsOpen] = useState(false)
   const [answer, setAnswer] = useState(false)
-  const [header, setHeader] = useState("Name that Pokemon!")
+  const [header, setHeader] = useState("Whats that Pokemon?")
   const [value, setValue] = useState("")
   const [hardMode, setHardMode] = useState(false)
   const [region, setRegion] = useState("random")
@@ -78,7 +78,7 @@ const QuizContainer = () => {
   const hardClick = () => {
     setHardMode(true)
     setAnswer(false)
-    setHeader("Name that Pokemon!")
+    setHeader("Whats that Pokemon?")
     dispatch(clearPokemon())
     //Get a new pokemon
     initialGuess(region)
@@ -88,14 +88,14 @@ const QuizContainer = () => {
   const normalModeClick = () => {
     setHardMode(false)
     setAnswer(false)
-    setHeader("Name that Pokemon!")
+    setHeader("Whats That Pokemon?")
     dispatch(clearPokemon())
     initialGuess(region)
   }
 
   const playAgainClick = () => {
     setAnswer(false)
-    setHeader("Name that Pokemon!")
+    setHeader("Whats That Pokemon?")
     dispatch(clearPokemon())
     initialGuess(region)
   }
@@ -167,7 +167,7 @@ const QuizContainer = () => {
               </h2>
             </div>
           <div className="modalContent">
-            <ModalRegionButtons closeModal={closeModal} setRegion={setRegion} setAnswer={setAnswer}/>
+            <ModalRegionButtons closeModal={closeModal} setRegion={setRegion} setAnswer={setAnswer} setHeader={setHeader}/>
             <div className ="optionButtons">
               {
                 hardMode ? (

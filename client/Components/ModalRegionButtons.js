@@ -10,6 +10,7 @@ const ModalRegionButtons = (props) => {
     dispatch(getRandomPokemon())
     dispatch(quizPokemon())
     props.setAnswer(false)
+    props.setHeader("Whats that Pokemon?")
     props.setRegion("random")
     props.closeModal()
   }
@@ -17,6 +18,7 @@ const ModalRegionButtons = (props) => {
     dispatch(getKantoPokemon())
     dispatch(getKantoQuizPokemon())
     props.setAnswer(false)
+    props.setHeader("Whats that Pokemon?")
     props.setRegion("kanto")
     props.closeModal()
   }
@@ -25,6 +27,7 @@ const ModalRegionButtons = (props) => {
     dispatch(getJohtoPokemon())
     dispatch(getJohtoQuizPokemon())
     props.setAnswer(false)
+    props.setHeader("Whats that Pokemon?")
     props.setRegion('johto')
     props.closeModal()
   }
@@ -33,6 +36,7 @@ const ModalRegionButtons = (props) => {
     dispatch(getHoennPokemon())
     dispatch(getHoennQuizPokemon())
     props.setAnswer(false)
+    props.setHeader("Whats that Pokemon?")
     props.setRegion('hoenn')
     props.closeModal()
   }
@@ -41,6 +45,7 @@ const ModalRegionButtons = (props) => {
     dispatch(getSinnohPokemon())
     dispatch(getSinnohQuizPokemon())
     props.setAnswer(false)
+    props.setHeader("Whats that Pokemon?")
     props.setRegion('sinnoh')
     props.closeModal()
   }
@@ -49,6 +54,7 @@ const ModalRegionButtons = (props) => {
     dispatch(getUnovaPokemon())
     dispatch(getUnovaQuizPokemon())
     props.setAnswer(false)
+    props.setHeader("Whats that Pokemon?")
     props.setRegion('unova')
     props.closeModal()
   }
@@ -57,6 +63,7 @@ const ModalRegionButtons = (props) => {
     dispatch(getKalosPokemon())
     dispatch(getKalosQuizPokemon())
     props.setAnswer(false)
+    props.setHeader("Whats that Pokemon?")
     props.setRegion('kalos')
     props.closeModal()
   }
@@ -65,6 +72,7 @@ const ModalRegionButtons = (props) => {
     dispatch(getAlolaPokemon())
     dispatch(getAlolaQuizPokemon())
     props.setAnswer(false)
+    props.setHeader("Whats that Pokemon?")
     props.setRegion('alola')
     props.closeModal()
   }
@@ -73,6 +81,7 @@ const ModalRegionButtons = (props) => {
     dispatch(getGalarPokemon())
     dispatch(getGalarQuizPokemon())
     props.setAnswer(false)
+    props.setHeader("Whats that Pokemon?")
     props.setRegion('galar')
     props.closeModal()
   }
