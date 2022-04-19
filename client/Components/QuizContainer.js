@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import QuizContent from "./QuizContent";
 import QuizAnswer from "./QuizAnswer";
-import { getRandomPokemon } from "../redux/pokemon";
-import { guessPokemon, quizPokemon, clearPokemon } from "../redux/quiz";
+import { getAlolaPokemon, getGalarPokemon, getHoennPokemon, getJohtoPokemon, getKalosPokemon, getKantoPokemon, getRandomPokemon, getSinnohPokemon, getUnovaPokemon } from "../redux/pokemon";
+import { guessPokemon, quizPokemon, clearPokemon, getKantoQuizPokemon, getJohtoQuizPokemon, getHoennQuizPokemon, getSinnohQuizPokemon, getUnovaQuizPokemon,getKalosQuizPokemon,getGalarQuizPokemon,getAlolaQuizPokemon, } from "../redux/quiz";
 import Modal from "react-modal";
 import ModalRegionButtons from "./ModalRegionButtons"
 
@@ -30,6 +30,46 @@ const QuizContainer = () => {
   const onChangeHandler= (event) => {
    setValue(event.target.value)
   }
+
+  const initialGuess = (region) => {
+    if(region === "kanto"){
+      dispatch(getKantoPokemon())
+      dispatch(getKantoQuizPokemon())
+    }
+    else if(region === "johto"){
+      dispatch(getJohtoPokemon())
+      dispatch(getJohtoQuizPokemon())
+    }
+
+    else if(region === "hoenn"){
+      dispatch(getHoennPokemon())
+      dispatch(getHoennQuizPokemon())
+    }
+    else if(region === "sinnoh"){
+      dispatch(getSinnohPokemon())
+      dispatch(getSinnohQuizPokemon())
+    }
+    else if(region === "unova"){
+      dispatch(getUnovaPokemon())
+      dispatch(getUnovaQuizPokemon())
+    }
+    else if(region === "kalos"){
+      dispatch(getKalosPokemon())
+      dispatch(getKalosQuizPokemon())
+    }
+    else if(region === "alola"){
+      dispatch(getAlolaPokemon())
+      dispatch(getAlolaQuizPokemon())
+    }
+    else if(region === "galar"){
+      dispatch(getGalarPokemon())
+      dispatch(getGalarQuizPokemon())
+    }
+    else {
+      dispatch(getRandomPokemon())
+      dispatch(quizPokemon())
+    }
+  }
   // Button Functions
   const quitClick = () => {
     history.push("/")
@@ -40,10 +80,9 @@ const QuizContainer = () => {
     setAnswer(false)
     setHeader("Name that Pokemon!")
     dispatch(clearPokemon())
-    //Get a new random pokemon
-    dispatch(getRandomPokemon())
-    //Get a new starting guessed pokemon
-    dispatch(quizPokemon())
+    //Get a new pokemon
+    initialGuess(region)
+
   }
 
   const normalModeClick = () => {
@@ -51,16 +90,14 @@ const QuizContainer = () => {
     setAnswer(false)
     setHeader("Name that Pokemon!")
     dispatch(clearPokemon())
-    dispatch(getRandomPokemon())
-    dispatch(quizPokemon())
+    initialGuess(region)
   }
 
   const playAgainClick = () => {
     setAnswer(false)
     setHeader("Name that Pokemon!")
     dispatch(clearPokemon())
-    dispatch(getRandomPokemon())
-    dispatch(quizPokemon())
+    initialGuess(region)
   }
 
   const giveUpClick = () => {
