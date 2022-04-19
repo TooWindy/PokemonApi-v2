@@ -146,7 +146,7 @@ const QuizContainer = () => {
           <QuizContent pokemon={pokemon} answer={answer} setAnswer={setAnswer} guesses={guesses} hardMode={hardMode}/>
         </div>
         <div className="answerWrapper">
-          <QuizAnswer pokemon={pokemon} guesses={guesses} />
+          <QuizAnswer pokemon={pokemon} guesses={guesses} region={region} initialGuess={initialGuess} answer={answer} />
         </div>
         <div className="buttonContainer">
         <button className={"quitQuiz"} onClick={quitClick}>Quit</button>

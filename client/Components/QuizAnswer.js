@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import QuizHints from "./QuizHints";
+
 
 const QuizAnswer = (props) => {
   const pokemon = props.pokemon
   const guesses = props.guesses
+
+  // useEffect(() => {
+  //   if(pokemon && guesses){
+  //     if(pokemon[0] === guesses[0]){
+  //     props.initialGuess(props.region)
+  //   }
+  // }
+  // },[])
 
   return (
     <div>
@@ -32,7 +41,7 @@ const QuizAnswer = (props) => {
          return (
            <div key={item.id}>
              {/* {console.log(item)} */}
-             <QuizHints pokemon={pokemon} guesses={item} />
+             <QuizHints pokemon={pokemon} guesses={item} initialGuess ={props.initialGuess} region={props.region} answer={props.answer} />
            </div>
          )
       })}
