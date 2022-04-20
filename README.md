@@ -14,6 +14,8 @@ This game is based off of the popular game wordle, where you are given hints on 
 
 * As of now, this is not meant to be used for mobile devices, so formatting/performance might be strange.
 
+* User can now choose a region to play, so that all pokemon chosen by the game will be from that specific region.
+
 ## How to Play
 
 To submit a guess, simply type in the name of the pokemon in the search bar and click enter. Your guess will show up in the guesses box. You have a total of 6 attempts, where one "freebie" guess is given to you to start off. As you keep guessing, more information about the pokemon slowly be revealed to you. On each guess, images will be shown to you giving you hints of how related the correct pokemon is to your guess. The categories are Generation, Type 1, Type 2, Height, and Weight. The images that would be rendered under these categories are as follows:
@@ -28,7 +30,7 @@ To submit a guess, simply type in the name of the pokemon in the search bar and 
 
 * Once you run out of guesses or you guess correctly, the pokemon will be revealed to you!
 
-* Too easy? Try hard mode! This mode still gives hints related to your guesses, but no information will be revealed to you about the correct pokemon.
+* Too easy? Try hard mode! This mode still gives hints related to your guesses, but no information will be revealed to you about the correct pokemon as you progress.
 
 
 
