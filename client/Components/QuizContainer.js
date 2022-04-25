@@ -163,6 +163,8 @@ const QuizContainer = () => {
 
         </div>
 
+{/* //Modals */}
+        {/* Options Modal */}
         <Modal isOpen={modalIsOpen === 'options'} onRequestClose={closeModal} className={'modal'}>
           <div>
             <div>
@@ -183,7 +185,7 @@ const QuizContainer = () => {
           </div>
         </div>
       </Modal>
-
+      {/* How to Play Modal */}
       <Modal isOpen={modalIsOpen === 'howToPlay'} onRequestClose={closeModal} className={'howToPlayModal'}>
         <div>
           <h1>
@@ -220,7 +222,7 @@ const QuizContainer = () => {
              </p>
           </div>
           <div className="arrowSquare">
-             <img src={"/squares/fastupIcon.png"} className="iconSize"/>
+             <img src={"/squares/fastUpIcon.png"} className="iconSize"/>
              <p className="squareDescription">
              Much Higher. The correct pokemon has a MUCH higher value
              </p>
