@@ -24,9 +24,9 @@ To submit a guess, simply type in the name of the pokemon in the search bar and 
 - ![alt text](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/310/large-red-square_1f7e5.png) = Incorrect
 - ![alt text](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/310/large-blue-square_1f7e6.png) = Null. This means that the correct pokemon is monotype.
 - ![alt text](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/upwards-button_1f53c.png) = Up. The correct pokemon has a higher value in its respective category than your guess.
-- ![alt text](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/fast-up-button_23eb.png) = Big Up. The correct pokemon has a MUCH higher value in its respective category than your guess. (As of right now this would only apply to the weight category)
+- ![alt text](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/fast-up-button_23eb.png) = Big Up. The correct pokemon has a MUCH higher value in its respective category than your guess.
 - ![alt text](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/downwards-button_1f53d.png) = Down. The correct pokemon has a lower value in its respective category than your guess.
-- ![alt text](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/fast-down-button_23ec.png) = Big Down. The correct pokemon has a MUCH lower value in its respective category than your guess. (As of right now this would only apply to the weight category).
+- ![alt text](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/fast-down-button_23ec.png) = Big Down. The correct pokemon has a MUCH lower value in its respective category than your guess.
 
 * Once you run out of guesses or you guess correctly, the pokemon will be revealed to you!
 
