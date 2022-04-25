@@ -217,17 +217,26 @@ button:hover {
 .giveUp:hover {
   background-color: #7829ad ;
 }
+
 .hardMode {
   background-color: #333;
 }
-
 .hardMode:hover {
   background-color: grey;
 }
 .normalMode {
   background-color: slategrey;
 }
+.normalMode:hover {
+  background-color: rgb(76, 86, 96)
+}
 
+.optionButton {
+  background-color: rgb(76, 87, 98);
+}
+.optionButton:hover {
+  background-color: rgb(47, 53, 60)
+}
 /* Containers for when pokemon search fails */
 .errorContainer {
   background: #f1f1f1;
@@ -290,8 +299,8 @@ button:hover {
 }
 
 .iconSize {
-  height: 60px;
-  width: 60px
+  height: 58px;
+  width: 58px
 }
 
 .guessPokemonIcon {
@@ -313,10 +322,16 @@ button:hover {
   box-shadow: 4px 4px 4px black;
 }
 
-/* .modalContent {
-  display: flex;
-  flex-direction: column;
-} */
+.howToPlayModal {
+  background: #f1f1f1;
+  margin: auto;
+  max-width:400px;
+  padding: 25px;
+  margin-top: 10%;
+  border-radius: 6px;
+  border: 10px rgb(206, 120, 237) solid;
+  box-shadow: 4px 4px 4px black;
+}
 .modalTitle {
   text-align: center;
 }
@@ -334,4 +349,18 @@ button:hover {
   display: flex;
   padding: 10px;
   justify-content: space-between;
+}
+
+.howToPlaySquare {
+  padding: 10px;
+}
+
+.arrowSquare {
+  padding-left: 10px;
+  padding-bottom: 4px;
+  padding-top: -1px
+}
+.squareDescription {
+  margin-top: -45px;
+  margin-left: 70px;
 }

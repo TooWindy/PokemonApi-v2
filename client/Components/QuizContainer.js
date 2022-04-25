@@ -121,10 +121,13 @@ const QuizContainer = () => {
     }
   }
 
-  const openModal = () => {
-    setIsOpen(true);
+  const openOptionModal = () => {
+    setIsOpen('options');
   }
 
+  const openHowToPlayModal = () => {
+    setIsOpen('howToPlay')
+  }
   const closeModal = () => {
     setIsOpen(false);
   }
@@ -150,7 +153,8 @@ const QuizContainer = () => {
         </div>
         <div className="buttonContainer">
         <button className={"quitQuiz"} onClick={quitClick}>Quit</button>
-        <button onClick={openModal}>Options</button>
+        <button onClick={openHowToPlayModal}>How to play</button>
+        <button className={"optionButton"}onClick={openOptionModal}>Options</button>
         {
           answer ? (
           <button onClick={playAgainClick}> Play Again!</button>
@@ -159,14 +163,14 @@ const QuizContainer = () => {
 
         </div>
 
-        <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className={'modal'}>
+        <Modal isOpen={modalIsOpen === 'options'} onRequestClose={closeModal} className={'modal'}>
           <div>
             <div>
               <h2 className={"modalTitle"}>
               Choose a Region:
               </h2>
             </div>
-          <div className="modalContent">
+          <div>
             <ModalRegionButtons closeModal={closeModal} setRegion={setRegion} setAnswer={setAnswer} setHeader={setHeader}/>
             <div className ="optionButtons">
               {
@@ -177,6 +181,65 @@ const QuizContainer = () => {
               <button className={"quitQuiz"}onClick={closeModal}> Exit </button>
             </div>
           </div>
+        </div>
+      </Modal>
+
+      <Modal isOpen={modalIsOpen === 'howToPlay'} onRequestClose={closeModal} className={'howToPlayModal'}>
+        <div>
+          <h1>
+            How To Play:
+          </h1>
+          <p>
+            Who's that pokemon? You have a total of 6 attempts, where one "freebie" guess is given to you to start off.
+          </p>
+          <p>
+            Want to play in a specific region? Click options and choose your region! Too easy? Try hard mode!
+          </p>
+          <div className="howToPlaySquare">
+             <img src={"/squares/greenSquare.png"} />
+             <p className="squareDescription">
+               Correct
+             </p>
+          </div>
+          <div className="howToPlaySquare">
+             <img src={"/squares/redSquare.png"}/>
+             <p className="squareDescription">
+               Incorrect
+             </p>
+          </div>
+          <div className="howToPlaySquare">
+             <img src={"/squares/blueSquare.png"}/>
+             <p className="squareDescription">
+               N/A. This means the correct pokemon is monotype
+             </p>
+          </div>
+          <div className="arrowSquare">
+             <img src={"/squares/upIcon.png"}/>
+             <p className="squareDescription">
+               Higher. The correct pokemon has a higher value
+             </p>
+          </div>
+          <div className="arrowSquare">
+             <img src={"/squares/fastupIcon.png"} className="iconSize"/>
+             <p className="squareDescription">
+             Much Higher. The correct pokemon has a MUCH higher value
+             </p>
+          </div>
+          <div className="arrowSquare">
+             <img src={"/squares/downIcon.png"}/>
+             <p className="squareDescription">
+              Lower. The correct pokemon has a lower value
+             </p>
+          </div>
+          <div className="arrowSquare">
+             <img src={"/squares/fastDownIcon.png"} className="iconSize"/>
+             <p className="squareDescription">
+              Much Lower. The correct pokemon has a MUCH lower value
+             </p>
+          </div>
+        <div>
+          <button className={"quitQuiz"}onClick={closeModal}> Exit </button>
+        </div>
         </div>
       </Modal>
       </div>
