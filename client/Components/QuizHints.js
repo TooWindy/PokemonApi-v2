@@ -19,6 +19,7 @@ const QuizHint = (props) => {
       console.log( "correct--- " + pokemon.name+ "\n" + "current--- " + guesses.name)
       //If the initial guess and the correct pokemon are both the same, reset the game. The check is for if the game state is true or false. If its false (user made no guesses), then reset.
       if(pokemon.name === guesses.name && props.answer === false){
+        console.log("Initial guess same as correct pokemon... picking a new pokemon")
         props.initialGuess(props.region)
       }
     }

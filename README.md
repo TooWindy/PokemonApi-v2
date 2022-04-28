@@ -10,6 +10,8 @@ This game is based off of the popular game wordle, where you are given hints on 
 
 * The last region update was the Galarian region (Sword and Shield)
 
+* You can technically figure out the answer by looking in the console through redux actions and logs, this is due to me still testing the game. If you want a true experience please don't open the console while playing!
+
 * I used the pokeApi here to grab my data: https://pokeapi.co/
 
 * As of now, this is not meant to be used for mobile devices, so formatting/performance might be strange.
