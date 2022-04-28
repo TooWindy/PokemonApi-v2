@@ -81,17 +81,5 @@ const Pokemon = () => {
   )
 }
 
-{/* <div class="name">{pokemon.name}</div>
-      <img src={pokemon.sprites.front_default} />
-      <div class="details">
-        <ul>
-            <strong>Type:</strong> {pokemon.types.map((type) =>{
-          return " " + type.type.name[0].toUpperCase() + type.type.name.slice(1)
-            })}
-        <strong>Ability(s): </strong> {pokemon.abilities.map((ability) => {
-          return " "+ ability.ability.name[0].toUpperCase() + ability.ability.name.slice(1)
-          })}
-          </ul>
-      </div> */}
 export default Pokemon
 
