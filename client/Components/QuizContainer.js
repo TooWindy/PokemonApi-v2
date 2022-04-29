@@ -154,7 +154,7 @@ const QuizContainer = () => {
         <div className="buttonContainer">
         <button className={"quitQuiz"} onClick={quitClick}>Quit</button>
         <button onClick={openHowToPlayModal}>How to play</button>
-        <button className={"optionButton"}onClick={openOptionModal}>Options</button>
+        <button className={"optionButton"}onClick={openOptionModal}>Change Region</button>
         {
           answer ? (
           <button onClick={playAgainClick}> Play Again!</button>
@@ -192,10 +192,10 @@ const QuizContainer = () => {
             How To Play:
           </h1>
           <p>
-            Who's that pokemon? You have a total of 6 attempts, where one "freebie" guess is given to you to start off.
+            Who's that pokemon? You have a total of 5 attempts, where one "freebie" guess is given to you to start off.
           </p>
           <p>
-            Want to play in a specific region? Click options and choose your region! Too easy? Try hard mode!
+            Want to play in a specific region? Click "Change Region" and choose your region! Too easy? Try hard mode!
           </p>
           <div className="howToPlaySquare">
              <img src={"/squares/greenSquare.png"} />
