@@ -1,5 +1,6 @@
 body {
   height: auto;
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +74,7 @@ button:hover {
 /* This is so evertyhing is centered on the home page */
 .homeInputContainer {
   display: flex;
-  padding-top: 100px;
+  /* padding-top: 100px; */
 }
 .input-wrapper {
   padding: 15px;
@@ -86,6 +87,7 @@ button:hover {
 }
 .submitButton {
   margin-left: auto;
+  font-size: 20px;
   background-color: rgb(65, 144, 247);
 }
 
@@ -271,7 +273,7 @@ button:hover {
 
 .quizTitle {
   text-align: center;
-  padding-top: 100px;
+  /* padding-top: 100px; */
 }
 .labelContainer {
   display: flex;
@@ -378,12 +380,14 @@ button:hover {
   width: 75%;
   box-sizing: border-box;
   max-height: 143px;
-  margin-top: -1px;
+  max-width: 39.75%;
+  margin-top: -.5px;
   margin-left:-2px;
   color: #2c3e50;
   font-size: 26px;
   background-color: white;
   overflow-y: auto;
+  position: absolute;
 }
 .suggestions li {
   padding: 0.5rem;

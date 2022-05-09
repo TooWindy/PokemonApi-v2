@@ -7,6 +7,8 @@ import { getAlolaPokemon, getGalarPokemon, getHoennPokemon, getJohtoPokemon, get
 import { guessPokemon, quizPokemon, clearPokemon, getKantoQuizPokemon, getJohtoQuizPokemon, getHoennQuizPokemon, getSinnohQuizPokemon, getUnovaQuizPokemon,getKalosQuizPokemon,getGalarQuizPokemon,getAlolaQuizPokemon, } from "../redux/quiz";
 import Modal from "react-modal";
 import ModalRegionButtons from "./ModalRegionButtons"
+import Autocomplete from "./Autocomplete";
+import pokemonList from "./assets/pokemonList"
 
 Modal.setAppElement('#root')
 
@@ -21,15 +23,17 @@ const QuizContainer = () => {
   const [value, setValue] = useState("")
   const [hardMode, setHardMode] = useState(false)
   const [region, setRegion] = useState("random")
+  const [mode, setMode] = useState("")
 
   useEffect(() => {
     dispatch(getRandomPokemon())
     dispatch(quizPokemon())
+    setMode("quiz")
   },[])
 
-  const onChangeHandler= (event) => {
-   setValue(event.target.value)
-  }
+  // const onChangeHandler= (event) => {
+  //  setValue(event.target.value)
+  // }
 
   const initialGuess = (region) => {
     if(region === "kanto"){
@@ -107,7 +111,6 @@ const QuizContainer = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(guessPokemon(value))
-    event.target.reset()
 
     //If user guesses correctly
     if(value.toLowerCase() === pokemon[0].name){
@@ -137,11 +140,12 @@ const QuizContainer = () => {
       {/* {console.log(region)} */}
       <h1 className={"quizTitle"}>{header}</h1>
       {
-        !answer ? (
-        <form className={'inputContainer'} onSubmit={handleSubmit}>
-          <input className={'input-wrapper'} placeholder="Enter Pokemon name here" onChange={onChangeHandler}></input>
-          <button className={'submitButton'}>Submit</button>
-        </form>
+        !answer && pokemon[0] ? (
+        // <form className={'inputContainer'} onSubmit={handleSubmit}>
+        //   <input className={'input-wrapper'} placeholder="Enter Pokemon name here" onChange={onChangeHandler}></input>
+        //   <button className={'submitButton'}>Submit</button>
+        // </form>
+        <Autocomplete suggestions={pokemonList} guesses={guesses} setAnswer={setAnswer}setHeader={setHeader} pokemonName={pokemon[0].name} mode={mode}/>
         ) : null
       }
 

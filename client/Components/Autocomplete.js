@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { searchPokemon } from "../redux/pokemon";
+import { guessPokemon } from "../redux/quiz";
 
-const AutoComplete = ({ suggestions }) => {
+const AutoComplete = ({ suggestions, guesses,setAnswer,setHeader, pokemonName, mode }) => {
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(0);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -47,16 +48,26 @@ const AutoComplete = ({ suggestions }) => {
           );
         })}
       </ul>
-    ) : (
-      <div className="no-suggestions">
-        <em>No suggestions, you're on your own!</em>
-      </div>
-    );
+    ) : null
   };
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(searchPokemon(input))
+    if(mode === 'quiz'){
+      dispatch(guessPokemon(input))
+      if(input.toLowerCase() === pokemonName){
+        setAnswer(true)
+        setHeader("Correct!")
+      }
+      if(guesses.length > 4 && input.toLowerCase() !== pokemonName){
+        setAnswer(true)
+        setHeader("Game Over!")
+      }
+    }
+    else{
+      dispatch(searchPokemon(input))
+    }
+    setInput("")
   }
 
   const onKeyDown = e => {
@@ -75,6 +86,7 @@ const AutoComplete = ({ suggestions }) => {
         onChange={onChange}
         onKeyDown={onKeyDown}
         onSubmit={handleSubmit}
+        placeholder="Enter Pokemon name here"
         value={input}>
       </input>
         <button className={'submitButton'}>Submit</button>

@@ -14,10 +14,12 @@ const Pokemon = () => {
   const dispatch = useDispatch()
   const pokemon = useSelector((state) => state.pokemon || [])
   const history = useHistory()
-  const [value, setValue] = useState("")
+  const [mode, setMode] = useState("")
+
 
   useEffect(() => {
     dispatch(getRandomPokemon())
+    setMode("lookup")
   },[])
 
   const quizClick = () => {
@@ -26,7 +28,7 @@ const Pokemon = () => {
 
   return(
     <div className={'contentContainer'}>
-      <Autocomplete suggestions={pokemonList}/>
+      <Autocomplete suggestions={pokemonList} mode ={mode}/>
       {/* A conditional checking if a pokemon is present in the current state.  */}
       {pokemon[0] ? (
       pokemon.map((pokemon) => {
