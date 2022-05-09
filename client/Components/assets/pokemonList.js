@@ -1,4 +1,4 @@
-const pokemonList = [
+export const pokemonList = [
 	"Bulbasaur",
 	"Ivysaur",
 	"Venusaur",
@@ -905,3 +905,5 @@ const pokemonList = [
 	"Overqwil",
 	"Enamorus"
 ]
+
+export default pokemonList

@@ -6,6 +6,8 @@ import RegionButtons from "./RegionButtons";
 import { pokedexNumber } from "./assets/pokedexNumber";
 import { searchPokemon } from "../redux/pokemon";
 import { useHistory } from "react-router-dom";
+import Autocomplete from "./Autocomplete";
+import pokemonList from "./assets/pokemonList"
 import '../Components/assets/typeColors.css'
 
 const Pokemon = () => {
@@ -33,10 +35,15 @@ const Pokemon = () => {
 
   return(
     <div className={'contentContainer'}>
-      <form className={'homeInputContainer'} onSubmit={handleSubmit}>
+      {/* <div className={'homeInputContainer'}>
         <input className={'input-wrapper'} placeholder="Enter Pokemon name here" onChange={onChangeHandler}></input>
         <button className={'submitButton'}>Submit</button>
-      </form>
+      </div> */}
+      <div>
+      <Autocomplete
+        suggestions={pokemonList}
+      />
+      </div>
       {/* A conditional checking if a pokemon is present in the current state.  */}
       {pokemon[0] ? (
       pokemon.map((pokemon) => {
