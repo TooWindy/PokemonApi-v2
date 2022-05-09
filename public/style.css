@@ -82,8 +82,7 @@ button:hover {
   width: 75%;
   box-sizing: border-box;
   color: #2c3e50;
-  font-size: 13px;
-  ;
+  font-size: 26px;
 }
 .submitButton {
   margin-left: auto;
@@ -367,32 +366,30 @@ button:hover {
 
 /* tests */
 
-input {
-  border: 1px solid #999;
-  padding: 0.5rem;
-  width: 300px;
-}
+
 .no-suggestions {
   color: #999;
   padding: 0.5rem;
 }
 .suggestions {
-  border: 1px solid #999;
-  border-top-width: 0;
-  list-style: none;
-  margin-top: 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  width: 75%;
+  box-sizing: border-box;
   max-height: 143px;
+  margin-top: -1px;
+  margin-left:-2px;
+  color: #2c3e50;
+  font-size: 26px;
+  background-color: white;
   overflow-y: auto;
-  padding-left: 0;
-  width: calc(300px + 1rem);
 }
 .suggestions li {
   padding: 0.5rem;
 }
 .suggestion-active,
 .suggestions li:hover {
-  background-color: #008f68;
-  color: #fae042;
   cursor: pointer;
   font-weight: 700;
 }

@@ -70,6 +70,7 @@ const AutoComplete = ({ suggestions }) => {
     <div>
       <form className={'homeInputContainer'} onSubmit={handleSubmit}>
       <input
+        className="input-wrapper"
         type="text"
         onChange={onChange}
         onKeyDown={onKeyDown}

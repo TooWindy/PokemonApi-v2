@@ -20,30 +20,13 @@ const Pokemon = () => {
     dispatch(getRandomPokemon())
   },[])
 
-  const onChangeHandler= (event) => {
-    setValue(event.target.value)
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    dispatch(searchPokemon(value))
-  }
-
   const quizClick = () => {
     history.push('/quiz')
   }
 
   return(
     <div className={'contentContainer'}>
-      {/* <div className={'homeInputContainer'}>
-        <input className={'input-wrapper'} placeholder="Enter Pokemon name here" onChange={onChangeHandler}></input>
-        <button className={'submitButton'}>Submit</button>
-      </div> */}
-      <div>
-      <Autocomplete
-        suggestions={pokemonList}
-      />
-      </div>
+      <Autocomplete suggestions={pokemonList}/>
       {/* A conditional checking if a pokemon is present in the current state.  */}
       {pokemon[0] ? (
       pokemon.map((pokemon) => {
