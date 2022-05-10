@@ -20,7 +20,6 @@ const QuizContainer = () => {
   const [modalIsOpen,setIsOpen] = useState(false)
   const [answer, setAnswer] = useState(false)
   const [header, setHeader] = useState("Whats that Pokemon?")
-  const [value, setValue] = useState("")
   const [hardMode, setHardMode] = useState(false)
   const [region, setRegion] = useState("random")
   const [mode, setMode] = useState("")
@@ -30,10 +29,6 @@ const QuizContainer = () => {
     dispatch(quizPokemon())
     setMode("quiz")
   },[])
-
-  // const onChangeHandler= (event) => {
-  //  setValue(event.target.value)
-  // }
 
   const initialGuess = (region) => {
     if(region === "kanto"){
@@ -107,21 +102,6 @@ const QuizContainer = () => {
   const giveUpClick = () => {
     setAnswer(true)
     setHeader("Game Over!")
-  }
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    dispatch(guessPokemon(value))
-
-    //If user guesses correctly
-    if(value.toLowerCase() === pokemon[0].name){
-      setAnswer(true)
-      setHeader("Correct!")
-    }
-    //If the user doesn't guess correctly on the 6th guess, the game ends
-    if(guesses.length > 4 && value.toLowerCase() !== pokemon[0].name){
-      setAnswer(true)
-      setHeader("Game Over!")
-    }
   }
 
   const openOptionModal = () => {
