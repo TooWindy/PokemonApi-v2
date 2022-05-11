@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  client:
+    stdin_open: true
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    volumes:
+      - "/app/node_modules"
+      - "./:/app"
+    command: npm run start
+    environment:
+      SEQ_DB: pokemonPicker
+      SEQ_USER: ${postgresUsername}
+      SEQ_PW: ${postgresPassword}
+      HOST: host.docker.internal
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER= ${postgresUsername}
+      - POSTGRES_PASSWORD= ${postgresPassword}
+    ports:
+      - "5432"
+
