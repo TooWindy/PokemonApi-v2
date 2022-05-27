@@ -111,21 +111,3 @@ const QuizContent = (props) => {
 }
 
 export default QuizContent
-
-//Pokemon information
-{/* <img src={pokemon.sprites.front_default} />
-            <div className="details">
-                <strong>Type:</strong> {pokemon.types.map((type) =>{
-                  return <div key={type.slot} className={type.type.name}>
-                          {" "}{type.type.name[0].toUpperCase()+type.type.name.slice(1)}{" "}
-                        </div>
-                  })}
-                  <strong>Weight:</strong>{String(pokemon.weight).slice(0,-1)+"."+ String(pokemon.weight).slice(-1)}kg
-            </div>
-            <div className="details">
-              <strong> Ability(s): </strong> {pokemon.abilities.map((ability) => {
-                  return <div key={ability.slot}>
-                          {ability.ability.name[0].toUpperCase()+ability.ability.name.slice(1) + " "}
-                        </div>
-                  })}
-              </div> */}

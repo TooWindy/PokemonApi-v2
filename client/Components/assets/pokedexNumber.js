@@ -18,7 +18,7 @@ export const pokedexNumber = (id) => {
     case id >= 810 && id <= 898:
       return "Galar"
     default:
-      return "What the"
+      return "Unknown"
   }
 }
 
