@@ -4,11 +4,9 @@
 
 This game is based off of the popular game wordle, where you are given hints on the pokemon. The objective is to choose the right one!
 
-* You can use the application on heroku: https://pokemonpicker-v2.herokuapp.com/
-
 * Clicking on the picture of the pokemon redirects you to the bulbabedia page for that specific pokemon
 
-* The last region update was the Galarian region (Sword and Shield)
+* The last region update was the Paldean region (Scarlet and Violet)
 
 * You can technically figure out the answer by looking in the console through redux actions and logs, this is due to me still testing the game. If you want a true experience please don't open the console while playing!
 
