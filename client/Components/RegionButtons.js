@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { getAlolaPokemon, getGalarPokemon, getHoennPokemon, getJohtoPokemon, getKalosPokemon, getKantoPokemon, getRandomPokemon, getSinnohPokemon, getUnovaPokemon } from "../redux/pokemon";
+import { getAlolaPokemon, getGalarPokemon, getHoennPokemon, getJohtoPokemon, getKalosPokemon, getKantoPokemon, getRandomPokemon, getSinnohPokemon, getUnovaPokemon, getPaldeanPokemon } from "../redux/pokemon";
 
 
 const RegionButtons = () => {
@@ -30,8 +30,12 @@ const RegionButtons = () => {
   const alolaClick = () => {
     dispatch(getAlolaPokemon())
   }
-  const galarClick =() => {
+  const galarClick = () => {
     dispatch(getGalarPokemon())
+  }
+
+  const paldeanClick = () => {
+    dispatch(getPaldeanPokemon());
   }
 
   return (
@@ -45,6 +49,7 @@ const RegionButtons = () => {
       <button onClick={kalosClick}>Kalos</button>
       <button onClick={alolaClick}>Alola</button>
       <button onClick={galarClick}>Galar</button>
+      <button onClick={paldeanClick}>Paldean</button>
     </div>
   )
 }

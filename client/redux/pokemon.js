@@ -19,14 +19,7 @@ const _searchPokemon = (pokemon) => {
   }
 }
 
-// const _getKantoPokemon=(pokemon) => {
-//   return {
-//     type: GET_KANTO_POKEMON,
-//     pokemon
-//   }
-// }
 //Thunks
-
 export const getRandomPokemon = () => {
   return async(dispatch) => {
     try{
@@ -153,6 +146,19 @@ export const getGalarPokemon = () => {
     }
     catch(err){
       console.log("Couldn't get Galar pokemon")
+    }
+  }
+}
+
+export const getPaldeanPokemon = () => {
+  return async(dispatch) => {
+    try {
+      const response = await axios.get('/api/pokemon/paldean');
+      const responseData = response.data;
+      dispatch(_getPokemon(responseData))
+    }
+    catch(err) {
+      console.log("Couldn't get Paldean pokemon")
     }
   }
 }
