@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { getAlolaPokemon, getGalarPokemon, getHoennPokemon, getJohtoPokemon, getKalosPokemon, getKantoPokemon, getRandomPokemon, getSinnohPokemon, getUnovaPokemon } from "../redux/pokemon";
-import { getKantoQuizPokemon, getJohtoQuizPokemon, getHoennQuizPokemon, getSinnohQuizPokemon, getUnovaQuizPokemon,getKalosQuizPokemon,getGalarQuizPokemon,getAlolaQuizPokemon, quizPokemon, } from "../redux/quiz";
+import { getAlolaPokemon, getGalarPokemon, getHoennPokemon, getJohtoPokemon, getKalosPokemon, getKantoPokemon, getRandomPokemon, getSinnohPokemon, getUnovaPokemon, getPaldeanPokemon } from "../redux/pokemon";
+import { getKantoQuizPokemon, getJohtoQuizPokemon, getHoennQuizPokemon, getSinnohQuizPokemon, getUnovaQuizPokemon,getKalosQuizPokemon,getGalarQuizPokemon,getAlolaQuizPokemon, quizPokemon, getPaldeanQuizPokemon } from "../redux/quiz";
 
 const ModalRegionButtons = (props) => {
   const dispatch = useDispatch()
@@ -85,17 +85,28 @@ const ModalRegionButtons = (props) => {
     props.setRegion('galar')
     props.closeModal()
   }
+
+  const paldeanQuizClick = () => {
+    dispatch(getPaldeanPokemon());
+    dispatch(getPaldeanQuizPokemon());
+    props.setAnswer(false);
+    props.setHeader("Whats that Pokemon?");
+    props.setRegion('paldean');
+    props.closeModal();
+  }
+
   return (
     <div className="modalButtons">
-      <button onClick={randomQuizClick} >All Regions</button>
-      <button onClick={kantoQuizClick} >Kanto</button>
-      <button onClick={johtoQuizClick} >Johto</button>
-      <button onClick={hoennQuizClick} >Hoenn</button>
-      <button onClick={sinnohQuizClick} >Sinnoh</button>
-      <button onClick={unovaQuizClick} >Unova</button>
-      <button onClick={kalosQuizClick} >Kalos</button>
-      <button onClick={alolaQuizClick} >Alola</button>
-      <button onClick={galarQuizClick} >Galar</button>
+      <button onClick={randomQuizClick}>All Regions</button>
+      <button onClick={kantoQuizClick}>Kanto</button>
+      <button onClick={johtoQuizClick}>Johto</button>
+      <button onClick={hoennQuizClick}>Hoenn</button>
+      <button onClick={sinnohQuizClick}>Sinnoh</button>
+      <button onClick={unovaQuizClick}>Unova</button>
+      <button onClick={kalosQuizClick}>Kalos</button>
+      <button onClick={alolaQuizClick}>Alola</button>
+      <button onClick={galarQuizClick}>Galar</button>
+      <button onClick={paldeanQuizClick}>Paldean</button>
     </div>
   )
 }

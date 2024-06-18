@@ -145,7 +145,7 @@ router.get('/galar', async(req,res,next) => {
 })
 
 router.get('/paldean', async(req,res,next) => {
-  const paldeanId = Math.floor(Math.random() * (1017 - 906 +1) + 906)
+  const paldeanId = Math.floor(Math.random() * (1025 - 906 +1) + 906)
   try {
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${paldeanId}`)
     const pokemonData = response.data

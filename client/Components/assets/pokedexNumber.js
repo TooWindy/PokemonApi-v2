@@ -17,7 +17,7 @@ export const pokedexNumber = (id) => {
       return "Alola"
     case id >= 810 && id <= 898:
       return "Galar"
-    case id >= 906 && id <= 1017:
+    case id >= 906 && id <= 1025:
       return "Paldean"
     default:
       return "Unknown"
@@ -42,7 +42,7 @@ export const generationNumber = (id) => {
       return 7
     case id >= 810 && id <= 898:
       return 8
-    case id >= 906 && id <= 1017:
+    case id >= 906 && id <= 1025:
       return 9
     default:
       return 'Invalid Generation'

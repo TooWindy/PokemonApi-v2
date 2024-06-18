@@ -163,6 +163,19 @@ export const getGalarQuizPokemon = () => {
     }
   }
 }
+
+export const getPaldeanQuizPokemon = () => {
+  return async(dispatch) => {
+    try{
+      const response = await axios.get('/api/pokemon/paldean');
+      const responseData = response.data;
+      dispatch(_getQuizPokemon(responseData));
+    }
+    catch(err){
+      console.log("Couldn't get Paldean pokemon");
+    }
+  }
+}
 //Reducer
 const initialState = []
 
